@@ -1,3 +1,2 @@
 # Terra Borus (Tentative Project Name)
-...............,,,,,,,
-I am Sharlyn
+Let's dive in to Terraborus
