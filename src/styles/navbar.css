@@ -3,3 +3,16 @@
     font-size: medium;
     font-weight: bold;
 }
+.nav_bar :hover {
+    color: green;
+}
+
+.logo{
+    margin-left: 50px;
+}
+
+.nav-collapse {
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
