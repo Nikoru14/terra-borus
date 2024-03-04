@@ -20,6 +20,13 @@ Navbar{
     font-weight: bold;
 }
 
+.overview{
+    margin-left: 50px;
+    font-size: xx-large;
+    color: black;
+}
+
+
 .nav-collapse {
     position: absolute;
     top: 20px;
