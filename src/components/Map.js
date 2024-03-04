@@ -41,7 +41,7 @@ const Map = () => {
                 <NavigationControl />
             </div>
             <Marker key={1} latitude={14.413167} longitude={121.448300}>
-                <i className="fa-sharp fa-solid fa-location-pin fa-2x" style={{ color: "red", height: "1.5rem", width: "1.5rem" }}></i>
+                <i className="fa-sharp fa-solid fa-location-pin fa-2x" style={{ color: "red"}}></i>
             </Marker>
         </ReactMapGL>
     );
