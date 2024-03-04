@@ -7,3 +7,14 @@
     pointer-events: auto;
     border-radius: 30px;
 }
+
+.card {
+    background: rgba(255, 255, 252, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(255, 255, 252, 0.27);
+    margin: 100px;
+    padding: 5%;
+}

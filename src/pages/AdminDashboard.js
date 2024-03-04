@@ -12,7 +12,6 @@ const AdminDashboard = () => {
     return (
         <>
             <NavigationBar />
-
         </>
     )
 }
