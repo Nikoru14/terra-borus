@@ -8,12 +8,16 @@ import './App.css';
 
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
+import AdminDashboard from './pages/AdminDashboard'
+import TreeInfo from './pages/TreeInfo';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/Admin" element={<AdminDashboard />} />
+        <Route path='/TreeInfo' element={<TreeInfo />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
