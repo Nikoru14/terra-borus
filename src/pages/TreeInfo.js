@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
+import '../styles/tree.css'
 import treeData from '../json/TreeData.json'
 
 const TreeInfo = () => {
@@ -38,9 +38,10 @@ const TreeInfo = () => {
     }
 
     return (
-        <div>
-            <h2><strong>Tree: </strong>{treeInfo.name} ({treeInfo.scientificName})</h2>
-            <p><strong>Description:</strong> {treeInfo.description}</p>
+        <div className="card">
+            <h4 className="tree-title"><strong>Tree: </strong>{treeInfo.name} 
+            ({treeInfo.scientificName})</h4>
+            <p className="" ><strong>Description:</strong> {treeInfo.description}</p>
             <p><strong>Other Names:</strong> {treeInfo.otherNames.join(', ')}</p>
             <p><strong>Tree Cycle:</strong> {treeInfo.treeCycle}</p>
             <p><strong>Fruiting Months:</strong> {treeInfo.fruitingMonths}</p>
@@ -55,6 +56,7 @@ const TreeInfo = () => {
         </div>
     );
 };
+
 
 
 export default TreeInfo;
