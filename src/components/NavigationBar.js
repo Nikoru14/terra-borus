@@ -11,7 +11,7 @@ const NavigationBar = () => {
             <Navbar.Collapse className="nav-collapse justify-content-center" id="basic-navbar-nav">
                 <Nav className="nav_bar mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link ><Link to="/blog">Blog</Link></Nav.Link>
+                    <Nav.Link href="/blog">Blog</Nav.Link>
                     <Nav.Link href="/">About</Nav.Link>
                     <Nav.Link href="/">Contact</Nav.Link>
                     <Nav.Link className="button" href="/">Add Tree</Nav.Link>

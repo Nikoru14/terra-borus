@@ -36,6 +36,7 @@ const Map = () => {
             attributionControl={false}
             onMove={handleViewportChange}
             onClick={handleClick}
+            style={{ borderRadius: '30px' }}
         >
             <div style={{ position: 'absolute', right: 10, top: -10 }}>
                 <NavigationControl />

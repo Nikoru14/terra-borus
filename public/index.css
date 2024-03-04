@@ -11,4 +11,5 @@ body{
     height: 650px;
     background-color: black;
     pointer-events: auto;
+    border-radius: 30px;
 }
