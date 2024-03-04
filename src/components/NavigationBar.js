@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 const NavigationBar = () => {
     return (
         <div>
+            <div>
             <Navbar className="sticky-nav" style={{ backgroundColor: 'rgba(0, 100, 0, 0.8)' }} expand="lg" sticky="top">
                 <Navbar.Brand href="/"><div className='logo'>TerraBorus</div></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -19,7 +20,8 @@ const NavigationBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-
+            </div>
+            <div>
             <Navbar className="sticky-nav" expand="lg" sticky="top">
                 <Navbar.Brand href="/"><div className='overview'>Map Overview</div></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -48,6 +50,7 @@ const NavigationBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
+            </div>
         </div>
     );
 };
