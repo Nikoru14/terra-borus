@@ -1,9 +1,3 @@
-body{
-    background-image: url('img/bghome.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-}
 .mapContainer {
     margin-left: auto;
     margin-right: auto;
