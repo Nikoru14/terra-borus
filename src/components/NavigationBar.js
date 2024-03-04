@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const NavigationBar = () => {
     return (
-        <Navbar expand="lg">
+        <Navbar className="sticky-nav" expand="lg" sticky="top">
             <Navbar.Brand href="/"><div className='logo'>TerraBorus</div></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse className="nav-collapse justify-content-center" id="basic-navbar-nav">

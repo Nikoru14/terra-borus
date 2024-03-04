@@ -9,6 +9,7 @@ Navbar{
     color: green;
 
 }
+
 .nav_bar :hover {
     color: green;
 }
@@ -34,4 +35,8 @@ Navbar{
     border-radius: 5px;
     text-decoration: none; 
     display: inline-block;
+}
+.NotFound
+{
+    text-align: center;
 }
