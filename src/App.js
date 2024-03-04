@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/Admin" element={<AdminDashboard />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/Admin" element={<AdminDashboard />} />
         <Route path='/TreeInfo' element={<TreeInfo />} />
         <Route path='*' element={<NotFound />} />
       </Routes>

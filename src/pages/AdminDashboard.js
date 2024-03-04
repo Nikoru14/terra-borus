@@ -78,11 +78,13 @@ const AdminDashboard = () => {
                     </tbody>
                 </table>
                 {selectedTreeForQR && (
-                    <div style={{ marginTop: '20px', textAlign: 'center', padding: '16px', background: 'white' }}>
+                    <div className='card' style={{ marginTop: '20px', textAlign: 'center', padding: '16px' }}>
                         <div ref={qrRef}>
                             <QRCode value={selectedTreeForQR} />
                         </div>
-                        <button onClick={downloadQRCode}>Save as PNG</button>
+                        <div>
+                            <button className='btn-secondary' onClick={downloadQRCode}> <i className='fa-solid fa-download' /> Save as PNG</button>
+                        </div>
                     </div>
                 )}
             </div>
