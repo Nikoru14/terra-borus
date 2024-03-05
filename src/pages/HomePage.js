@@ -20,26 +20,29 @@ const HomePage = () => {
             <Navbar className="nav" expand="lg">
                 <Navbar.Brand href="/"><div className='overview'>Map Overview</div></Navbar.Brand>
                     <Nav className="nav_bar1 mr-auto">
-                        <NavDropdown title="Trees Species" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">1</NavDropdown.Item>
-                            <NavDropdown.Item href="/">2</NavDropdown.Item>
-                            <NavDropdown.Item href="/">3</NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Trees List" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">1</NavDropdown.Item>
-                            <NavDropdown.Item href="/">2</NavDropdown.Item>
-                            <NavDropdown.Item href="/">3</NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Trees Status" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">1</NavDropdown.Item>
-                            <NavDropdown.Item href="/">2</NavDropdown.Item>
-                            <NavDropdown.Item href="/">3</NavDropdown.Item>
-                        </NavDropdown>
-                        <NavDropdown title="Trees Cycle" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/">1</NavDropdown.Item>
-                            <NavDropdown.Item href="/">2</NavDropdown.Item>
-                            <NavDropdown.Item href="/">3</NavDropdown.Item>
-                        </NavDropdown>
+                    <NavDropdown title="Trees Species" id="species-dropdown" style={{ zIndex: 1000 }}>
+                        <NavDropdown.Item href="/">1</NavDropdown.Item>
+                        <NavDropdown.Item href="/">2</NavDropdown.Item>
+                        <NavDropdown.Item href="/">3</NavDropdown.Item>
+                    </NavDropdown>
+
+                    <NavDropdown title="Trees List" id="list-dropdown" style={{ zIndex: 1001, position: 'relative' }}>
+                        <NavDropdown.Item href="/">1</NavDropdown.Item>
+                        <NavDropdown.Item href="/">2</NavDropdown.Item>
+                        <NavDropdown.Item href="/">3</NavDropdown.Item>
+                    </NavDropdown>
+
+                    <NavDropdown title="Trees Status" id="status-dropdown" style={{ zIndex: 1002, position: 'relative' }}>
+                        <NavDropdown.Item href="/">1</NavDropdown.Item>
+                        <NavDropdown.Item href="/">2</NavDropdown.Item>
+                        <NavDropdown.Item href="/">3</NavDropdown.Item>
+                    </NavDropdown>
+
+                    <NavDropdown title="Trees Cycle" id="cycle-dropdown" style={{ zIndex: 1003, position: 'relative' }}>
+                        <NavDropdown.Item href="/">1</NavDropdown.Item>
+                        <NavDropdown.Item href="/">2</NavDropdown.Item>
+                        <NavDropdown.Item href="/">3</NavDropdown.Item>
+                    </NavDropdown>
                     </Nav>
             </Navbar>
             <div className='mapContainer'>
