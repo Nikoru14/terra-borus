@@ -64,6 +64,12 @@ p {
   touch-action: manipulation;
 }
 
+.button_view:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
 .button_view::after,
 .button_view::before {
   content: '';
