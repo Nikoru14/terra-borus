@@ -55,8 +55,8 @@ const AdminDashboard = () => {
                 <div class="row justify-content-start">
                     <div class="col" style={{ margin: '20px' }}>
                     <h2>Tree Data</h2>
-                    <table class="table table-striped" border="1" style={{ width: '100%', textAlign: 'left' }}>
-                    <thead>
+                    <table class="table table-striped table-hover" border="1" style={{ width: '100%', textAlign: 'justify' }}>
+                    <thead class="">
                         <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
@@ -65,7 +65,7 @@ const AdminDashboard = () => {
                         <th scope="col">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="table-group-divider"> 
                     {dataArray.map((tree) => (
                         <tr key={tree.id}>
                         <td>{tree.id}</td>
