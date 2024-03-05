@@ -5,6 +5,7 @@ import mapboxgl from 'mapbox-gl';
 import { debounce } from "lodash";
 import treePins from '../json/TreePins.json'; // Assuming this path is correct
 import treeData from '../json/TreeData.json'; // Assuming this path is correct
+import '../styles/tree.css'
 
 // The following is required to stop "npm build" from transpiling mapbox code.
 // notice the exclamation point in the import.
@@ -82,11 +83,11 @@ const Map = () => {
                     closeOnClick={false}
                     anchor="top"
                 >
-                    <div>
-                        <h3>{selectedTree.details.name || 'Tree Details'}</h3>
-                        <p>Scientific Name: {selectedTree.details.scientificName}</p>
-                        <p>Description: {selectedTree.details.description}</p>
-                        <li><Link to={`/TreeInfo?treeId=${selectedTree.speciesId}`}>view more...</Link></li>
+                    <div class="card_1">
+                        <h3 class="card_tree">{selectedTree.details.name || 'Tree Details'}</h3>
+                        <strong>Scientific Name:</strong><p class="italic">{selectedTree.details.scientificName}</p>
+                        <p><strong>Description: </strong>{selectedTree.details.description}</p>
+                        <button class="button_view" role="button" to={`/TreeInfo?treeId=${selectedTree.speciesId}`}>Read More</button>
                         {/* Include any other details you wish to show */}
                     </div>
                 </Popup>

@@ -19,3 +19,93 @@ p {
 .tree-title {
     font-family: cursive;
 }
+.card_1 {
+        background: rgba(255, 255, 255, 0.1); 
+        backdrop-filter: blur(10px);
+        border-radius: 20px; 
+        border: 1px solid rgba(255, 255, 255, 0.18); 
+        padding: 10px;  
+        color: #315e26;
+        font-family: 'Courier New', Courier, monospace;
+}
+.italic
+{
+    font-family: "Satisfy", cursive;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.card_tree
+{
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #2b6024;
+}
+.button_view
+{
+  all: unset;
+  width: 160px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button_view::after,
+.button_view::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button_view::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #63ad68;
+  border-radius: 10px;
+}
+
+.button_view::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #2b6024;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button_view:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button_view:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button_view:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
