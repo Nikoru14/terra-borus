@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import QRCode from 'react-qr-code';
 import treeData from '../json/TreeData.json'; // Adjust the import path as needed
@@ -50,8 +51,6 @@ const AdminDashboard = () => {
 
     return (
         <>
-            <NavigationBar />
-
             <div class="container">
                 <div class="row justify-content-start">
                     <div class="col" style={{ margin: '20px' }}>
@@ -77,24 +76,24 @@ const AdminDashboard = () => {
                                     <button onClick={() => handleQRCodeGenerate(tree.id)}>Generate QR Code</button>
                                 </td>
                         </tr>
-                          ))}
+                        ))}
                     </tbody>
                     </table>
                     </div>
-                    <div class="col">
-                    {selectedTreeForQR && (
-                    <div className='card' style={{ marginTop: '20px', textAlign: 'center', padding: '16px' }}>
-                        <div ref={qrRef}>
-                            <QRCode value={selectedTreeForQR} />
-                        </div>
-                        <div>
-                            <button className='btn-secondary' onClick={downloadQRCode}> <i className='fa-solid fa-download' /> Save as PNG</button>
-                        </div>
-                    </div>
-                )}
+                    <div className="col d-flex flex-column align-items-center">
+                        {selectedTreeForQR && (
+                            <div className='card text-center'>
+                                <div className='qr' ref={qrRef}>
+                                    <QRCode value={selectedTreeForQR} />
+                                </div>
+                                <div>
+                                    <button className='btn-secondary' onClick={downloadQRCode}> <i className='fa-solid fa-download' /> Save as PNG</button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
-                </div>
+            </div>
         </>
     );
 };
