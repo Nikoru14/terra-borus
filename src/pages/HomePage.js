@@ -19,26 +19,26 @@ const HomePage = () => {
             <NavigationBar />
             <Navbar className="nav" expand="lg">
                 <Navbar.Brand href="/"><div className='overview'>Map Overview</div></Navbar.Brand>
-                    <Nav className="nav_bar1 mr-auto">
-                    <NavDropdown title="Trees Species" id="species-dropdown">
+                    <Nav className="nav_bar1 d-flex justify-content-end">
+                    <NavDropdown title="Trees Species" id="species-dropdown" className="species">
                         <NavDropdown.Item href="/">1</NavDropdown.Item>
                         <NavDropdown.Item href="/">2</NavDropdown.Item>
                         <NavDropdown.Item href="/">3</NavDropdown.Item>
                     </NavDropdown>
 
-                    <NavDropdown title="Trees List" id="list-dropdown">
+                    <NavDropdown title="Trees List" id="list-dropdown" className="list">
                         <NavDropdown.Item href="/">1</NavDropdown.Item>
                         <NavDropdown.Item href="/">2</NavDropdown.Item>
                         <NavDropdown.Item href="/">3</NavDropdown.Item>
                     </NavDropdown>
 
-                    <NavDropdown title="Trees Status" id="status-dropdown">
+                    <NavDropdown title="Trees Status" id="status-dropdown" className="status">
                         <NavDropdown.Item href="/">1</NavDropdown.Item>
                         <NavDropdown.Item href="/">2</NavDropdown.Item>
                         <NavDropdown.Item href="/">3</NavDropdown.Item>
                     </NavDropdown>
 
-                    <NavDropdown title="Trees Cycle" id="cycle-dropdown">
+                    <NavDropdown title="Trees Cycle" id="cycle-dropdown" className="cycle">
                         <NavDropdown.Item href="/">1</NavDropdown.Item>
                         <NavDropdown.Item href="/">2</NavDropdown.Item>
                         <NavDropdown.Item href="/">3</NavDropdown.Item>
