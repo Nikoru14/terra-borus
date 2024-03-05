@@ -19,19 +19,11 @@
     padding: 5%;
 }
 
-.btn-secondary {
-    border: 2px solid azure;
-    background-color: green;
-    border-radius: 5px;
-    margin-left: 10px;
-    text-decoration: none;
-    display: inline-block;
-    color: azure;
-    margin: 2px
-}
 
-.btn-secondary:hover {
-    border: 2px solid green;
-    background-color: azure;
-    color: green;
+canvas { 
+    position:absolute;
+    left:0;
+    top:0;
+    overflow: hidden;
+    background-size: cover;
 }

@@ -4,7 +4,17 @@
     font-weight: bold;
 }
 
-.nav_link_custom {
+.nav_bar1 {
+    margin-left: auto;
+    position: relative;
+    top: 0;
+    right: 0;
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.nav_link_custom{
     color: white;
     margin-left: 10px;
 }
@@ -13,7 +23,7 @@
     color: yellowgreen;
 }
 
-.logo {
+.logo{
     margin-left: 50px;
     font-size: xx-large;
     color: white;
@@ -21,7 +31,7 @@
     font-weight: bold;
 }
 
-.overview {
+.overview{
     margin-left: 50px;
     font-size: xx-large;
     color: black;
@@ -45,16 +55,7 @@
     display: inline-block;
 }
 
-.NotFound {
+
+.NotFound{
     text-align: center;
-}
-
-.sticky-nav.visible {
-    transition: top 0.3s;
-}
-
-.sticky-nav.hidden {
-    top: -100px;
-    /* Adjust according to the height of your navbar */
-    transition: top 0.3s;
 }
