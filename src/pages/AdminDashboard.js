@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
-import NavigationBar from "../components/NavigationBar";
 import QRCode from 'react-qr-code';
 import treeData from '../json/TreeData.json'; // Adjust the import path as needed
 

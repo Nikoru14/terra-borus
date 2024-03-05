@@ -5,23 +5,25 @@
 }
 
 .nav_bar1 {
-    margin-left: auto;
     position: relative;
+    margin-left: auto;
     top: 0;
-    right: 0;   
+    right: 0;
     font-style: normal;
     font-size: medium;
     font-weight: bold;
 }
 
-
-.nav_link_custom{
-    color: white;
+.nav_bar .nav_link_custom,
+.nav_bar {
+    color: white !important;
     margin-left: 10px;
+    transition: color 0.3s;
 }
 
-.nav_bar :hover {
-    color: yellowgreen;
+.nav_bar .nav_link_custom:hover,
+.nav_bar:hover {
+    color: yellowgreen !important;
 }
 
 .logo{
@@ -49,15 +51,11 @@
 
 .button {
     border: 2px solid green;
-    background-color: azure;
+    background-color: lightgreen;
     border-radius: 5px;
     margin-left: 10px;
     text-decoration: none;
     display: inline-block;
-}
-
-.custom-dropdown {
-    z-index: 1000;
 }
 
 .NotFound{
