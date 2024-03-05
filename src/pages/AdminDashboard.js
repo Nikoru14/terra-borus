@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import QRCode from 'react-qr-code';
 import treeData from '../json/TreeData.json'; // Adjust the import path as needed
@@ -50,43 +51,48 @@ const AdminDashboard = () => {
 
     return (
         <>
-            <NavigationBar />
-            <div style={{ margin: '20px' }}>
-                <h2>Tree Data</h2>
-                <table border="1" style={{ width: '100%', textAlign: 'left' }}>
-                    <thead>
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col" style={{ margin: '20px' }}>
+                    <h2>Tree Data</h2>
+                    <table class="table table-striped table-hover" border="1" style={{ width: '100%', textAlign: 'justify' }}>
+                    <thead class="">
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Scientific Name</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Scientific Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {dataArray.map((tree) => (
-                            <tr key={tree.id}>
-                                <td>{tree.id}</td>
-                                <td>{tree.name}</td>
-                                <td>{tree.scientificName}</td>
-                                <td>{tree.description}</td>
-                                <td>
+                    <tbody class="table-group-divider"> 
+                    {dataArray.map((tree) => (
+                        <tr key={tree.id}>
+                        <td>{tree.id}</td>
+                        <td>{tree.name}</td>
+                        <td>{tree.scientificName}</td>
+                        <td>{tree.description}</td>
+                        <td>
                                     <button onClick={() => handleQRCodeGenerate(tree.id)}>Generate QR Code</button>
                                 </td>
-                            </tr>
+                        </tr>
                         ))}
                     </tbody>
-                </table>
-                {selectedTreeForQR && (
-                    <div className='card' style={{ marginTop: '20px', textAlign: 'center', padding: '16px' }}>
-                        <div ref={qrRef}>
-                            <QRCode value={selectedTreeForQR} />
-                        </div>
-                        <div>
-                            <button className='btn-secondary' onClick={downloadQRCode}> <i className='fa-solid fa-download' /> Save as PNG</button>
-                        </div>
+                    </table>
                     </div>
-                )}
+                    <div className="col d-flex flex-column align-items-center">
+                        {selectedTreeForQR && (
+                            <div className='card text-center'>
+                                <div className='qr' ref={qrRef}>
+                                    <QRCode value={selectedTreeForQR} />
+                                </div>
+                                <div>
+                                    <button className='btn-secondary' onClick={downloadQRCode}> <i className='fa-solid fa-download' /> Save as PNG</button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
             </div>
         </>
     );
