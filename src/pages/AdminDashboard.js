@@ -51,33 +51,38 @@ const AdminDashboard = () => {
     return (
         <>
             <NavigationBar />
-            <div style={{ margin: '20px' }}>
-                <h2>Tree Data</h2>
-                <table border="1" style={{ width: '100%', textAlign: 'left' }}>
+
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col" style={{ margin: '20px' }}>
+                    <h2>Tree Data</h2>
+                    <table class="table table-striped" border="1" style={{ width: '100%', textAlign: 'left' }}>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Scientific Name</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Scientific Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {dataArray.map((tree) => (
-                            <tr key={tree.id}>
-                                <td>{tree.id}</td>
-                                <td>{tree.name}</td>
-                                <td>{tree.scientificName}</td>
-                                <td>{tree.description}</td>
-                                <td>
+                    {dataArray.map((tree) => (
+                        <tr key={tree.id}>
+                        <td>{tree.id}</td>
+                        <td>{tree.name}</td>
+                        <td>{tree.scientificName}</td>
+                        <td>{tree.description}</td>
+                        <td>
                                     <button onClick={() => handleQRCodeGenerate(tree.id)}>Generate QR Code</button>
                                 </td>
-                            </tr>
-                        ))}
+                        </tr>
+                          ))}
                     </tbody>
-                </table>
-                {selectedTreeForQR && (
+                    </table>
+                    </div>
+                    <div class="col">
+                    {selectedTreeForQR && (
                     <div className='card' style={{ marginTop: '20px', textAlign: 'center', padding: '16px' }}>
                         <div ref={qrRef}>
                             <QRCode value={selectedTreeForQR} />
@@ -87,7 +92,9 @@ const AdminDashboard = () => {
                         </div>
                     </div>
                 )}
-            </div>
+                    </div>
+                </div>
+                </div>
         </>
     );
 };
