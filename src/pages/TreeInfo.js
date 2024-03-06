@@ -59,7 +59,7 @@ const TreeInfo = () => {
                     </div>
                     <div class="col-sm-6 p-3 mb-2">
                     <div className="image-container">
-                    <img src={treeInfo.imgUrl} alt="Tree Image" className="responsive-image" />
+                    <img src={treeInfo.imgUrl[0]} alt="Tree Image" className="responsive-image" />
                 </div>
         </div>
                 </div>
@@ -73,7 +73,7 @@ const TreeInfo = () => {
                         </div>
                         <div class="col-sm-6 p-3 mb-2">
                         <div className="image-container">
-                        <img src={treeInfo.imgUrl1} alt="Tree Image" className="responsive-image" />
+                        <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
                         </div>
                         </div>
                         </div>
