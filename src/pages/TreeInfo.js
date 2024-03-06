@@ -58,7 +58,9 @@ const TreeInfo = () => {
                     </div>
                     </div>
                     <div class="col-sm-6 p-3 mb-2">
-            <div class="text-center">Image</div>
+                    <div className="image-container">
+                    <img src={treeInfo.imgUrl} alt="Tree Image" className="responsive-image" />
+                </div>
         </div>
                 </div>
                 </div>
@@ -70,7 +72,9 @@ const TreeInfo = () => {
                         {treeInfo.floweringDescription}</p></div>
                         </div>
                         <div class="col-sm-6 p-3 mb-2">
-                        <div class="p">Image</div>
+                        <div className="image-container">
+                        <img src={treeInfo.imgUrl1} alt="Tree Image" className="responsive-image" />
+                        </div>
                         </div>
                         </div>
                         <div class="row">

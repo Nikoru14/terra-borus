@@ -1,6 +1,6 @@
 {
     "FIT-BY01": {
-        "imgUrl": "",
+        "imgUrl": "/path/to/your/image.jpg",
         "name": "Bignay",
         "scientificName": "Antidesma bunius",
         "description": "Bignay is a small, evergreen tree native to Southeast Asia and Northern Australia. It is known for its edible fruit, which can be eaten fresh or used in jams, jellies, syrups, and wine.",
@@ -31,6 +31,8 @@
         "ripeFruitDescription": "Ripe bignay fruits are dark purple to black and have a sweet and tart flavour."
     },
     "FIT-LP01": {
+        "imgUrl": "../img/lipote.jpg",
+        "imgUrl1": "../img/lipote1.jpg",
         "name": "Lipote",
         "scientificName": "Syzygium polycephaloides (C.B.Rob.)",
         "description": "Lipote is a small to medium-sized tree, reaching up to 14 meters tall. It grows in primary forests at low to medium elevations. It is endemic to the Philippines, originating from low to medium elevated forests in Luzon and some parts of Visayas.",

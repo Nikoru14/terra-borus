@@ -138,4 +138,17 @@ p {
   border: 1px solid rgba(138, 154, 91, 0.3);
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
+.responsive-image {
+  max-width: 80%;
+  max-height: 80%;
+  min-width: 50%;
+  min-height: 50px;
+  border-radius: 20px;
+}
