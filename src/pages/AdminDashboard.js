@@ -80,7 +80,7 @@ const AdminDashboard = () => {
                     </div>
                     <div className="col d-flex flex-column align-items-center">
                         {selectedTreeForQR && (
-                            <div className='card text-center'>
+                            <div className='card1 text-center'>
                                 <div className='qr' ref={qrRef}>
                                     <QRCode value={selectedTreeForQR} />
                                 </div>

@@ -8,7 +8,13 @@ body {
     background-repeat: no-repeat;
 }
 
+.container {
+  min-width: 90%;
+  width: 90%;
+}
+
 h2 {
+  font-family: "Satisfy", cursive;
     text-align: justify;
 }
 
@@ -19,22 +25,22 @@ p {
 .tree-title {
     font-family: cursive;
 }
-.card_1 {
-        background: rgba(58, 90, 64, 0.5);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(4.9px);
-        -webkit-backdrop-filter: blur(4.9px);
-        border: 1px solid rgba(58, 90, 64, 0.3);
-        color: #315e26;
-        font-family: 'Courier New', Courier, monospace;
-}
 .italic
 {
     font-family: "Satisfy", cursive;
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.card {
+  background: rgba(255, 255, 252, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.7px);
+  -webkit-backdrop-filter: blur(8.7px);
+  border: 1px solid rgba(255, 255, 252, 0.27);
+  margin: 5%;
+  padding: 5%;
 }
 .card_tree
 {
@@ -46,7 +52,7 @@ p {
 .button_view
 {
   all: unset;
-  width: 160px;
+  width: auto;
   height: 30px;
   font-size: 16px;
   background: transparent;
@@ -59,7 +65,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  white-space: nowrap;  
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -131,3 +137,5 @@ p {
   -webkit-backdrop-filter: blur(4.9px);
   border: 1px solid rgba(138, 154, 91, 0.3);
 }
+
+
