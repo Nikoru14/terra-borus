@@ -1,6 +1,7 @@
 {
     "FIT-BY01": {
-        "imgUrl": "/path/to/your/image.jpg",
+        "imgUrl": "../img/lipote.jpg",
+        "imgUrl1": "../img/lipote1.jpg",
         "name": "Bignay",
         "scientificName": "Antidesma bunius",
         "description": "Bignay is a small, evergreen tree native to Southeast Asia and Northern Australia. It is known for its edible fruit, which can be eaten fresh or used in jams, jellies, syrups, and wine.",
@@ -53,6 +54,8 @@
         "ripeFruitDescription": "When the time is right, the unripe green transforms into a captivating display of red and dark purple. The crisp and dry flesh reveals a mildly sour flavor."
     },
     "FIT-KM01": {
+        "imgUrl": "../img/tambis.jpg",
+        "imgUrl1": "../img/tambis1.jpg",
         "name": "Katmon",
         "scientificName": "Dillenia philippinensis",
         "description": "Katmon is a small to medium-sized evergreen tree, reaching up to 15 meters in height. It is native to the Philippines, found in low to medium altitude forests throughout the country.",
