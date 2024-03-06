@@ -104,7 +104,7 @@ const TreeInfo = () => {
                         </div>  
                 </div>
             <div className="card">
-                <h4 className="tree-title"><strong>Name: </strong>{treeInfo.name} ({treeInfo.scientificName})</h4>
+                <h4 className="tree-title"><strong>Name: </strong>{treeInfo.name} ({treeInfo.scientificName})</h4><br></br>
                 <p className="" ><strong>Description:</strong> {treeInfo.description}</p>
                 <p><strong>Other Names:</strong> {treeInfo.otherNames.join(', ')}</p>
                 <p><strong>Tree Cycle:</strong> {treeInfo.treeCycle}</p>
