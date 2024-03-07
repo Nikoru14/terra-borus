@@ -48,12 +48,13 @@
     margin: 5px;
 }
 
- .cycle {
+.cycle {
     border: 1px solid #ccc;
-    background-color: 	#607c3c;
+    background-color: #607c3c;
     border-radius: 5px;
     margin: 5px;
 }
+
 .species .dropdown-menu {
     border: 1px solid #ccc;
     background-color: #ececa3;
@@ -82,7 +83,7 @@
     z-index: 1000;
 }
 
-.logo{
+.logo {
     margin-left: 50px;
     font-size: xx-large;
     color: white;
@@ -90,7 +91,7 @@
     font-weight: bold;
 }
 
-.overview{
+.overview {
     margin-left: 50px;
     font-size: xx-large;
     color: black;
@@ -114,6 +115,6 @@
     display: inline-block;
 }
 
-.NotFound{
+.NotFound {
     text-align: center;
 }
