@@ -22,7 +22,7 @@
     transition: color 0.3s;
 }
 
-.nav_link_custom:hover{
+.nav_link_custom:hover {
     color: yellowgreen !important;
     font-size: larger;
 }
@@ -115,15 +115,11 @@
     display: inline-block;
 }
 
-<<<<<<< HEAD
-.NotFound {
-=======
 .button1:hover {
     color: black !important;
     font-size: larger;
 }
 
-.NotFound{
->>>>>>> 58a4ed16d4daa14a07b6d807167dcacbb306c055
+.NotFound {
     text-align: center;
 }
