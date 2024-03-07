@@ -22,9 +22,9 @@
     transition: color 0.3s;
 }
 
-.nav_bar .nav_link_custom:hover,
-.nav_bar:hover {
+.nav_link_custom:hover{
     color: yellowgreen !important;
+    font-size: larger;
 }
 
 .species {
@@ -106,7 +106,7 @@
     margin-bottom: 20px;
 }
 
-.button {
+.button1 {
     border: 2px solid green;
     background-color: lightgreen;
     border-radius: 5px;
@@ -115,6 +115,15 @@
     display: inline-block;
 }
 
+<<<<<<< HEAD
 .NotFound {
+=======
+.button1:hover {
+    color: black !important;
+    font-size: larger;
+}
+
+.NotFound{
+>>>>>>> 58a4ed16d4daa14a07b6d807167dcacbb306c055
     text-align: center;
 }
