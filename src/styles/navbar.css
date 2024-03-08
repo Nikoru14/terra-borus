@@ -22,9 +22,9 @@
     transition: color 0.3s;
 }
 
-.nav_bar .nav_link_custom:hover,
-.nav_bar:hover {
+.nav_link_custom:hover {
     color: yellowgreen !important;
+    font-size: larger;
 }
 
 .species {
@@ -48,12 +48,13 @@
     margin: 5px;
 }
 
- .cycle {
+.cycle {
     border: 1px solid #ccc;
-    background-color: 	#607c3c;
+    background-color: #607c3c;
     border-radius: 5px;
     margin: 5px;
 }
+
 .species .dropdown-menu {
     border: 1px solid #ccc;
     background-color: #ececa3;
@@ -82,7 +83,7 @@
     z-index: 1000;
 }
 
-.logo{
+.logo {
     margin-left: 50px;
     font-size: xx-large;
     color: white;
@@ -90,7 +91,7 @@
     font-weight: bold;
 }
 
-.overview{
+.overview {
     margin-left: 50px;
     font-size: xx-large;
     color: black;
@@ -105,7 +106,7 @@
     margin-bottom: 20px;
 }
 
-.button {
+.button1 {
     border: 2px solid green;
     background-color: lightgreen;
     border-radius: 5px;
@@ -114,6 +115,11 @@
     display: inline-block;
 }
 
-.NotFound{
+.button1:hover {
+    color: black !important;
+    font-size: larger;
+}
+
+.NotFound {
     text-align: center;
 }

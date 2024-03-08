@@ -6,6 +6,8 @@ import { debounce } from "lodash";
 import treePins from '../json/TreePins.json'; // Assuming this path is correct
 import treeData from '../json/TreeData.json'; // Assuming this path is correct
 import '../styles/tree.css'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+
 
 // The following is required to stop "npm build" from transpiling mapbox code.
 // notice the exclamation point in the import.
@@ -42,11 +44,11 @@ const Map = () => {
         });
     };
 
-    const handleMapClick = (event) => {
-        const longitude = event.lngLat.lng;
-        const latitude = event.lngLat.lat;
-        console.log(`Longitude: ${longitude}, Latitude: ${latitude}`);
-    }
+    // const handleMapClick = (event) => {
+    //     const longitude = event.lngLat.lng;
+    //     const latitude = event.lngLat.lat;
+    //     console.log(`Longitude: ${longitude}, Latitude: ${latitude}`);
+    // }
 
 
     useEffect(() => {
@@ -56,44 +58,81 @@ const Map = () => {
     }, [selectedTree]);
 
     return (
-        <ReactMapGL
-            {...viewport}
-            mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
-            attributionControl={false}
-            onMove={handleViewportChange}
-            //onClick={handleMapClick}
-            style={{ borderRadius: '30px' }}
-        >
-            <div style={{ position: 'absolute', right: 10, top: 10 }}>
-                <NavigationControl />
-            </div>
-            {treePins.map((pin, index) => (
-                <Marker key={index} latitude={pin.latitude} longitude={pin.longitude}>
-                    <div onClick={(event) => handleMarkerClick(event, pin)} style={{ cursor: 'pointer' }}>
-                        <i className="fa-sharp fa-solid fa-location-pin fa-2x" style={{ color: speciesColorMap[pin.speciesId] || 'black' }}></i>
-                    </div>
-                </Marker>
-            ))}
-            {selectedTree && (
-                <Popup
-                    latitude={selectedTree.latitude}
-                    longitude={selectedTree.longitude}
-                    onClose={() => setSelectedTree(null)}
-                    closeOnClick={false}
-                    anchor="top"
-                >
-                    <div class="card_1">
-                        <h3 class="card_tree">{selectedTree.details.name || 'Tree Details'}</h3>
-                        <strong>Scientific Name:</strong><p class="italic">{selectedTree.details.scientificName}</p>
-                        <p><strong>Description: </strong>{selectedTree.details.description}</p>
-                        <Link to={`/TreeInfo?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
-                        {/* Include any other details you wish to show */}
-                    </div>
-                </Popup>
-            )}
-        </ReactMapGL>
+        <>
+            <MapNavBar />
+            <ReactMapGL
+                {...viewport}
+                mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
+                attributionControl={false}
+                onMove={handleViewportChange}
+                //onClick={handleMapClick}
+                style={{ borderRadius: '30px' }}
+            >
+                <div style={{ position: 'absolute', right: 10, top: 10 }}>
+                    <NavigationControl />
+                </div>
+                {treePins.map((pin, index) => (
+                    <Marker key={index} latitude={pin.latitude} longitude={pin.longitude}>
+                        <div onClick={(event) => handleMarkerClick(event, pin)} style={{ cursor: 'pointer' }}>
+                            <i className="fa-sharp fa-solid fa-location-pin fa-2x" style={{ color: speciesColorMap[pin.speciesId] || 'black' }}></i>
+                        </div>
+                    </Marker>
+                ))}
+                {selectedTree && (
+                    <Popup
+                        latitude={selectedTree.latitude}
+                        longitude={selectedTree.longitude}
+                        onClose={() => setSelectedTree(null)}
+                        closeOnClick={false}
+                        anchor="top"
+                    >
+                        <div class="card_1">
+                            <h3 class="card_tree">{selectedTree.details.name || 'Tree Details'}</h3>
+                            <strong>Scientific Name:</strong><p class="italic">{selectedTree.details.scientificName}</p>
+                            <p><strong>Description: </strong>{selectedTree.details.description}</p>
+                            <Link to={`/TreeInfo?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
+                            {/* Include any other details you wish to show */}
+                        </div>
+                    </Popup>
+                )}
+            </ReactMapGL>
+        </>
     );
 };
+
+const MapNavBar = () => {
+
+    return (
+        <Navbar className="nav" expand="lg">
+            <Navbar.Brand href="/"><div className='overview'>Map Overview</div></Navbar.Brand>
+            <Nav className="nav_bar1 d-flex justify-content-end">
+                <NavDropdown title="Trees Species" id="species-dropdown" className="species">
+                    <NavDropdown.Item href="/">1</NavDropdown.Item>
+                    <NavDropdown.Item href="/">2</NavDropdown.Item>
+                    <NavDropdown.Item href="/">3</NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown title="Trees List" id="list-dropdown" className="list">
+                    <NavDropdown.Item href="/">1</NavDropdown.Item>
+                    <NavDropdown.Item href="/">2</NavDropdown.Item>
+                    <NavDropdown.Item href="/">3</NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown title="Trees Status" id="status-dropdown" className="status">
+                    <NavDropdown.Item href="/">1</NavDropdown.Item>
+                    <NavDropdown.Item href="/">2</NavDropdown.Item>
+                    <NavDropdown.Item href="/">3</NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown title="Trees Cycle" id="cycle-dropdown" className="cycle">
+                    <NavDropdown.Item href="/">1</NavDropdown.Item>
+                    <NavDropdown.Item href="/">2</NavDropdown.Item>
+                    <NavDropdown.Item href="/">3</NavDropdown.Item>
+                </NavDropdown>
+            </Nav>
+        </Navbar>
+    );
+}
 
 export default Map;
