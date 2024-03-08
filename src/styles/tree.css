@@ -1,5 +1,6 @@
 .tree-title {
     font-size: 50px;
+    color: #f0f0f0;
 }
 
 body {
@@ -20,15 +21,14 @@ body {
 h2 {
   font-family: "Satisfy", cursive;
     text-align: justify;
+    color: #f0f0f0;
 }
 
 p {
     text-align: justify;
+    color: #f0f0f0;
 }
 
-.tree-title {
-    font-family: cursive;
-}
 .italic
 {
     font-family: "Satisfy", cursive;
@@ -138,15 +138,17 @@ p {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.9px);
+  padding: 20px;
   -webkit-backdrop-filter: blur(4.9px);
   border: 1px solid rgba(138, 154, 91, 0.3);
+  color: #f0f0f0;
 }
 
 .image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 400px;
 }
 
 .responsive-image {

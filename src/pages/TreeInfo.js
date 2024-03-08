@@ -42,6 +42,7 @@ const TreeInfo = () => {
     return (
         <>
             <NavigationBar />
+            <section>
             <div className="container">
                 <div className="row">
                     <div className="col-sm-6 p-3 mb-2"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
@@ -59,12 +60,18 @@ const TreeInfo = () => {
                     </div>
                     <div className="col-sm-6 p-3 mb-2">
                     <div className="image-container">
-                    <img src={treeInfo.imgUrl[0]} alt="Tree Image" className="responsive-image" />
-                </div>
+    <div className="row">
+        <div className="column">
+            <img src={treeInfo.imgUrl[0]} alt="Tree Image" className="responsive-image" />
+        </div>
+    </div>
+</div>
+
         </div>
                 </div>
                 </div>
-
+                </section>
+                <section>
                 <div className="container text-center">
                     <div className="row">
                         <div className="col-sm-6 p-3 mb-2">
@@ -87,6 +94,7 @@ const TreeInfo = () => {
                         </div>
                     </div>  
                 </div>
+                </section>
                 <div className="container text-center">
                     <div className="row">
                         <div className="col-sm-6 p-3 mb-2">
