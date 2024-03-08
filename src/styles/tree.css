@@ -3,14 +3,7 @@
     color: #f0f0f0;
 }
 
-body {
-    background-image: url('../images/bg2.png');
-      height: 100vh;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      margin: 0;
-  }
+
 
 
 .container {
@@ -26,7 +19,6 @@ h2 {
 
 p {
     text-align: justify;
-    color: #f0f0f0;
 }
 
 .italic

@@ -33,6 +33,7 @@
     background-color: #ececa3;
     border-radius: 5px;
     margin: 5px;
+    width: 125px;
 }
 
 .list {
@@ -40,6 +41,7 @@
     background-color: #abc32f;
     border-radius: 5px;
     margin: 5px;
+    width: 125px;
 }
 
 .status {
@@ -47,6 +49,8 @@
     background-color: #809c13;
     border-radius: 5px;
     margin: 5px;
+    width: 125px;
+    
 }
 
 .cycle {
@@ -54,6 +58,7 @@
     background-color: #607c3c;
     border-radius: 5px;
     margin: 5px;
+    width: 125px;
 }
 
 .species .dropdown-menu {
@@ -95,7 +100,7 @@
 .overview {
     margin-left: 50px;
     font-size: xx-large;
-    color: black;
+    color: white;
 }
 
 .nav-collapse {
