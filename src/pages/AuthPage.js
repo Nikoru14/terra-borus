@@ -8,7 +8,7 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 const AuthPage = () => {
     return (
         <>
-            <div class="container" id="particles">
+            <div class="authpage" id="particles">
                 <div class="forms-container" id="webcoderskull">
                     <div class="signin-signup">
                     <form action="#" class="sign-in-form">

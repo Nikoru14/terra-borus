@@ -42,22 +42,22 @@ const TreeInfo = () => {
     return (
         <>
             <NavigationBar />
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 p-3 mb-2"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
-                    <div class="content">
-                    <div class="row"> <h4><strong>Scientific Name: ({treeInfo.scientificName})</strong></h4></div>
-                    <div class="row"><p><strong>Description:</strong>  {treeInfo.description}</p></div>
-                    <div class="row"><p><strong>Other Names:</strong> {treeInfo.otherNames.join(', ')}</p></div>
-                    <div class="row"><p><strong>Tree Cycle:</strong> {treeInfo.treeCycle}</p></div>
-                    <div class="row"><p><strong>Fruiting Months:</strong> {treeInfo.fruitingMonths}</p></div>
-                    <div class="row"><p><strong>Tree Status:</strong> {treeInfo.treeStatus}</p></div>
-                    <div class="row"><p><strong>Tree Species:</strong> {treeInfo.treeSpecies}</p></div>
-                    <div class="row"><p><strong>Fruit Colour:</strong> {treeInfo.fruitColour}</p></div>
-                    <div class="row"><p><strong>Pests Identified:</strong> {Array.isArray(treeInfo.pestIdentified) ? treeInfo.pestIdentified.join(', ') : treeInfo.pestIdentified}</p></div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-6 p-3 mb-2"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
+                    <div className="content1">
+                    <div className="row"> <h4><strong>Scientific Name: ({treeInfo.scientificName})</strong></h4></div>
+                    <div className="row"><p><strong>Description:</strong>  {treeInfo.description}</p></div>
+                    <div className="row"><p><strong>Other Names:</strong> {treeInfo.otherNames.join(', ')}</p></div>
+                    <div className="row"><p><strong>Tree Cycle:</strong> {treeInfo.treeCycle}</p></div>
+                    <div className="row"><p><strong>Fruiting Months:</strong> {treeInfo.fruitingMonths}</p></div>
+                    <div className="row"><p><strong>Tree Status:</strong> {treeInfo.treeStatus}</p></div>
+                    <div className="row"><p><strong>Tree Species:</strong> {treeInfo.treeSpecies}</p></div>
+                    <div className="row"><p><strong>Fruit Colour:</strong> {treeInfo.fruitColour}</p></div>
+                    <div className="row"><p><strong>Pests Identified:</strong> {Array.isArray(treeInfo.pestIdentified) ? treeInfo.pestIdentified.join(', ') : treeInfo.pestIdentified}</p></div>
                     </div>
                     </div>
-                    <div class="col-sm-6 p-3 mb-2">
+                    <div className="col-sm-6 p-3 mb-2">
                     <div className="image-container">
                     <img src={treeInfo.imgUrl[0]} alt="Tree Image" className="responsive-image" />
                 </div>
@@ -65,49 +65,49 @@ const TreeInfo = () => {
                 </div>
                 </div>
 
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p"><p><strong>Flowering Description:</strong> 
+                <div className="container text-center">
+                    <div className="row">
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p"><p><strong>Flowering Description:</strong> 
                         {treeInfo.floweringDescription}</p></div>
                         </div>
-                        <div class="col-sm-6 p-3 mb-2">
+                        <div className="col-sm-6 p-3 mb-2">
                         <div className="image-container">
                         <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
                         </div>
                         </div>
                         </div>
-                        <div class="row">
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p">Image</div>
+                        <div className="row">
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p">Image</div>
                         </div>
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p"><p><strong>Fruiting Description:</strong> 
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p"><p><strong>Fruiting Description:</strong> 
                         {treeInfo.fruitingDescription}</p></div>
                         </div>
                     </div>  
                 </div>
-                <div class="container text-center">
-                    <div class="row">
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p"><p><strong>Unripe Fruit Description:</strong> 
+                <div className="container text-center">
+                    <div className="row">
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p"><p><strong>Unripe Fruit Description:</strong> 
                         {treeInfo.unripeFruitDescription}</p></div>
                         </div>
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p">Image</div>
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p">Image</div>
                         </div>
                         </div>
-                        <div class="row">
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p">Image</div>
+                        <div className="row">
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p">Image</div>
                         </div>
-                        <div class="col-sm-6 p-3 mb-2">
-                        <div class="p"> <p><strong>Ripe Fruit Description:</strong> 
+                        <div className="col-sm-6 p-3 mb-2">
+                        <div className="p"> <p><strong>Ripe Fruit Description:</strong> 
                         {treeInfo.ripeFruitDescription}</p></div>
                         </div>
                         </div>  
                 </div>
-            <div className="card">
+            <div className="card2">
                 <h4 className="tree-title"><strong>Name: </strong>{treeInfo.name} ({treeInfo.scientificName})</h4><br></br>
                 <p className="" ><strong>Description:</strong> {treeInfo.description}</p>
                 <p><strong>Other Names:</strong> {treeInfo.otherNames.join(', ')}</p>

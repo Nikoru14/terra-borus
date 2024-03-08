@@ -31,3 +31,32 @@ canvas {
     z-index: auto;
     background-repeat: no-repeat;
 }
+
+
+
+.grid2 { grid-area: header; }
+.grid1 { grid-area: menu; }
+.grid3 { grid-area: main; }
+.grid4 { grid-area: footer; }
+
+.grid-container {
+  background-color: white; 
+  display: grid;
+  grid-template-rows: 40px 1fr 1fr;
+  grid-template-areas:
+    'menu menu menu header header header'
+    'menu menu menu main main main'
+    'menu menu menu footer footer footer'
+    ;
+  gap: 10px;
+  grid-template-rows: 40px 1fr;
+  grid-template-columns: 150px 1fr;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background: none;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
