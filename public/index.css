@@ -40,13 +40,18 @@ canvas {
 .grid4 { grid-area: footer; }
 
 .grid-container {
-  background-color: white; 
+    background: rgba(255, 255, 252, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(255, 255, 252, 0.27);
   display: grid;
   grid-template-rows: 40px 1fr 1fr;
   grid-template-areas:
     'menu menu menu header header header'
     'menu menu menu main main main'
-    'menu menu menu footer footer footer'
+    'footer footer footer footer footer footer'
     ;
   gap: 10px;
   grid-template-rows: 40px 1fr;
@@ -60,3 +65,7 @@ canvas {
   padding: 20px 0;
   font-size: 30px;
 }
+
+img {
+    border-radius: 50%;
+  }

@@ -6,7 +6,7 @@ const AuthPage = () => {
 
     return (
         <>
-            <div className={`container ${isSignUpMode ? 'sign-up-mode' : ''}`} id="particles">
+            <div className={`authpage ${isSignUpMode ? 'sign-up-mode' : ''}`} id="particles">
                 <div className="forms-container" id="webcoderskull">
                     <div className="signin-signup">
                         {/* Sign-in form */}

@@ -38,9 +38,9 @@ const SortButtons = ({ onSort }) => {
 // The individual card component
 const Card = ({ name, description, imgUrl, buttonUrl }) => {
     return (
-        <div style={{ width: '500px', margin: '10px', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)' }}>
+        <div style={{ width: '450px', margin: '10px', boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)' }}>
             <div className="grid-container">
-                <div><img src={imgUrl} className="grid1" alt={name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} /></div>
+                <div><img src={imgUrl} className="grid1" alt={name} style={{ width: '150px', height: '150px', objectFit: 'cover' }} /></div>
                 <div className="grid2">
                     <h4>{name}</h4>
                 </div>
