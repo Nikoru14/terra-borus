@@ -148,7 +148,5 @@ p {
 .responsive-image {
   max-width: 80%;
   max-height: 80%;
-  min-width: 50%;
-  min-height: 50px;
   border-radius: 20px;
 }
