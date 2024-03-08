@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import AdminDashboard from './pages/AdminDashboard'
 import TreeInfo from './pages/TreeInfo';
+import AuthPage from './pages/AuthPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/Admin" element={<AdminDashboard />} />
         <Route path='/TreeInfo' element={<TreeInfo />} />
+        <Route path='/AuthPage' element={<AuthPage />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
