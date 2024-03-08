@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { Container, Row, Col, Table, Button, Card } from 'react-bootstrap';
-import NavigationBar from "../components/NavigationBar";
 import QRCode from 'react-qr-code';
 import treeData from '../json/TreeData.json'; // Adjust the import path as needed
 
@@ -82,7 +80,7 @@ const AdminDashboard = () => {
                     </div>
                     <div className="col d-flex flex-column align-items-center">
                         {selectedTreeForQR && (
-                            <div className='card text-center'>
+                            <div className='card1 text-center'>
                                 <div className='qr' ref={qrRef}>
                                     <QRCode value={selectedTreeForQR} />
                                 </div>
