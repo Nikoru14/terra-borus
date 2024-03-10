@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound';
 import AdminDashboard from './pages/AdminDashboard'
 import TreeInfo from './pages/TreeInfo';
 import AuthPage from './pages/AuthPage';
+import ContactForm from './pages/ContactForm';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Admin" element={<AdminDashboard />} />
         <Route path='/TreeInfo' element={<TreeInfo />} />
         <Route path='/AuthPage' element={<AuthPage />} />
+        <Route path='/ContactForm' element={<ContactForm />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>

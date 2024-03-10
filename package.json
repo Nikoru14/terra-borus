@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/lodash.debounce": "^4.0.9",
     "@types/mapbox-gl": "^3.1.0",
+    "animejs": "^3.2.2",
     "bootstrap": "^5.3.3",
     "gl-matrix": "^3.4.3",
     "mapbox-gl": "^3.1.2",
