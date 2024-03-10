@@ -139,12 +139,17 @@ p {
 .image-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 400px;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }
 
 .responsive-image {
-  max-width: 80%;
-  max-height: 80%;
+  max-width: auto;
+  margin: 10px;
+  max-height: 210px;
   border-radius: 20px;
 }
+
+
+

@@ -126,9 +126,9 @@ const MapNavBar = () => {
                 </NavDropdown>
 
                 <NavDropdown title="Trees Cycle" id="cycle-dropdown" className="cycle">
-                    <NavDropdown.Item href="/">1</NavDropdown.Item>
-                    <NavDropdown.Item href="/">2</NavDropdown.Item>
-                    <NavDropdown.Item href="/">3</NavDropdown.Item>
+                    <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
+                    <NavDropdown.Item href="/" className="nav-link-custom11">2</NavDropdown.Item>
+                    <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
         </div>

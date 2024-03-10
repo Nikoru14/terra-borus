@@ -43,9 +43,10 @@ const TreeInfo = () => {
         <>
             <NavigationBar />
             <section>
-            <div className="container">
+                
+            <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
                 <div className="row">
-                    <div className="col-sm-6 p-3 mb-2"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
+                    <div className="col-sm-6 p-3 mb-2">
                     <div className="content1">
                     <div className="row"> <h4><strong>Scientific Name: ({treeInfo.scientificName})</strong></h4></div>
                     <div className="row"><p><strong>Description:</strong>  {treeInfo.description}</p></div>
@@ -60,12 +61,19 @@ const TreeInfo = () => {
                     </div>
                     <div className="col-sm-6 p-3 mb-2">
                     <div className="image-container">
-    <div className="row">
-        <div className="column">
-            <img src={treeInfo.imgUrl[0]} alt="Tree Image" className="responsive-image" />
+                    <div className="row">
+            <div className="col">
+                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+            </div>
+            <div class="w-100"></div>
+            <div className="col">
+                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+            </div>
         </div>
+
     </div>
-</div>
 
         </div>
                 </div>

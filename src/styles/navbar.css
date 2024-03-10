@@ -17,6 +17,10 @@
     --bs-link-color: #000000;
 }
 
+.nav_bar1:hover {
+    --bs-link-hover-color: lightgreen;
+  }
+
 .nav_bar .nav_link_custom,
 .nav_bar {
     color: white !important;
