@@ -12,6 +12,7 @@ import AdminDashboard from './pages/AdminDashboard'
 import TreeInfo from './pages/TreeInfo';
 import AuthPage from './pages/AuthPage';
 import ContactForm from './pages/ContactForm';
+import AdminSmspin from './pages/AdminSmspin';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path='/TreeInfo' element={<TreeInfo />} />
         <Route path='/AuthPage' element={<AuthPage />} />
         <Route path='/ContactForm' element={<ContactForm />} />
+        <Route path='/AdminSmspin' element={<AdminSmspin />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
