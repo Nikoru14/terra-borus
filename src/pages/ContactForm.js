@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/contactform.css';
+import NavigationBar from "../components/NavigationBar";
 
 const ContactForm = () => {
     return (
+        <>
+        <NavigationBar />
         <section className="contact-form">
             <h1 className="heading">Contact Us</h1>
             <p className="para">Thank you for visiting our website! We value your feedback and inquiries. Please feel free to get in touch with us using the contact information provided below.</p>
@@ -52,6 +55,7 @@ const ContactForm = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 
