@@ -137,15 +137,11 @@ p {
 }
 
 .image-container {
-  display: flex;
-  justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .responsive-image {
-  max-width: auto;
   margin: 10px;
   max-height: 210px;
   border-radius: 20px;

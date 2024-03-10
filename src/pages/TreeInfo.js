@@ -59,24 +59,20 @@ const TreeInfo = () => {
                     <div className="row"><p><strong>Pests Identified:</strong> {Array.isArray(treeInfo.pestIdentified) ? treeInfo.pestIdentified.join(', ') : treeInfo.pestIdentified}</p></div>
                     </div>
                     </div>
-                    <div className="col-sm-6 p-3 mb-2">
-                    <div className="image-container">
-                    <div className="row">
-            <div className="col">
-                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
-                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
-            </div>
-            <div class="w-100"></div>
-            <div className="col">
-                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
-                <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
-            </div>
-        </div>
-
-    </div>
-
-        </div>
-                </div>
+                    <div className="image-container col-sm-6 p-3 mb-2 ">
+                            <div className="row text-center">
+                                <div className="col">
+                                    <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                                    <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                                </div>
+                                <div class=""></div>
+                                <div className="col">
+                                    <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                                    <img src={treeInfo.imgUrl[1]} alt="Tree Image" className="responsive-image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 </section>
                 <section>
@@ -142,7 +138,6 @@ const TreeInfo = () => {
         
     );
 };
-
 
 
 export default TreeInfo;
