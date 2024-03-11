@@ -18,14 +18,6 @@ const InfoTree = () => {
     }
   }, [treeId]);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setActiveSlideIndex(prevIndex => (prevIndex + 1) % treeInfo?.imgUrl.length);
-    }, 5000);
-
-    return () => clearInterval(intervalId);
-  }, [treeInfo]);
-
   const handleNext = () => {
     setActiveSlideIndex(prevIndex => (prevIndex + 1) % treeInfo.imgUrl.length);
   };
@@ -43,15 +35,20 @@ const InfoTree = () => {
       <Row className="justify-content-md-center">
         <Col md={8}>
           <div className="slider">
+            <div className="thumbnail">
             <img src={treeInfo.imgUrl[activeSlideIndex]} alt="Tree Image" className="slider-image" />
             <div className="content">
+            <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2></div>
               <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
-              <p>{treeInfo.description}</p>
+              <div className="row"> <h4><strong>Scientific Name: ({treeInfo.scientificName})</strong></h4></div>
+              <p>{treeInfo.description[activeSlideIndex]}</p>
             </div>
+          
             <div className="arrows">
               <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
               <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
             </div>
+          </div>
           </div>
         </Col>
       </Row>
