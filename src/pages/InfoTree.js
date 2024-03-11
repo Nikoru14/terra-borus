@@ -8,33 +8,44 @@ const InfoTree = () => {
   const [searchParams] = useSearchParams();
   const treeId = searchParams.get('treeId');
   const [treeInfo, setTreeInfo] = useState(null);
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [slides, setSlides] = useState([]);
-
 
   useEffect(() => {
     if (treeId && treeData[treeId]) {
-      setTreeInfo(treeData[treeId]);
+      const currentTreeInfo = treeData[treeId];
+      setTreeInfo(currentTreeInfo);
       setSlides([
         {
-          title: "General Information",
-          content: `Scientific Name: ${treeInfo.scientificName}\nDescription: ${treeInfo.description}\nOther Names: ${treeInfo.otherNames.join(", ")}\nTree Cycle: ${treeInfo.treeCycle}\nFruiting Months: ${treeInfo.fruitingMonths}\nTree Status: ${treeInfo.treeStatus}\nTree Species: ${treeInfo.treeSpecies}\nFruit Colour: ${treeInfo.fruitColour}\nPests Identified: ${treeInfo.pestIdentified.join(", ")}`,
+          content: (
+            <div>
+              <p><strong>Scientific Name:</strong> {currentTreeInfo.scientificName}</p>
+              <p><strong>Description:</strong> {currentTreeInfo.description}</p>
+              <p><strong>Other Names:</strong> {currentTreeInfo.otherNames.join(", ")}</p>
+              <p><strong>Tree Cycle:</strong> {currentTreeInfo.treeCycle}</p>
+              <p><strong>Fruiting Months:</strong> {currentTreeInfo.fruitingMonths}</p>
+              <p><strong>Tree Status:</strong> {currentTreeInfo.treeStatus}</p>
+              <p><strong>Tree Species:</strong> {currentTreeInfo.treeSpecies}</p>
+              <p><strong>Fruit Colour:</strong> {currentTreeInfo.fruitColour}</p>
+              <p><strong>Pests Identified:</strong> {currentTreeInfo.pestIdentified.join(", ")}</p>
+            </div>
+          ),
         },
         {
           title: "Flowering Description",
-          content: treeInfo.floweringDescription,
+          content: currentTreeInfo.floweringDescription,
         },
         {
           title: "Fruiting Description",
-          content: treeInfo.fruitingDescription,
+          content: currentTreeInfo.fruitingDescription,
         },
         {
           title: "Unripe Fruit Description",
-          content: treeInfo.unripeFruitDescription,
+          content: currentTreeInfo.unripeFruitDescription,
         },
         {
           title: "Ripe Fruit Description",
-          content: treeInfo.ripeFruitDescription,
+          content: currentTreeInfo.ripeFruitDescription,
         },
       ]);
     } else {
@@ -42,13 +53,12 @@ const InfoTree = () => {
     }
   }, [treeId]);
 
-
   const handleNext = () => {
-    setActiveSlideIndex(prevIndex => (prevIndex + 1) % treeInfo.imgUrl.length);
+    setActiveSlideIndex((prevIndex) => (prevIndex + 1) % (treeInfo.imgUrl.length || 1));
   };
 
   const handlePrev = () => {
-    setActiveSlideIndex(prevIndex => (prevIndex - 1 + treeInfo.imgUrl.length) % treeInfo.imgUrl.length);
+    setActiveSlideIndex((prevIndex) => (prevIndex - 1 + (treeInfo.imgUrl.length || 1)) % (treeInfo.imgUrl.length || 1));
   };
 
   if (!treeInfo) {
@@ -58,21 +68,23 @@ const InfoTree = () => {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col md={8}>
+        <Col md={9}>
           <div className="slider">
             <div className="thumbnail">
               <img src={treeInfo.imgUrl[activeSlideIndex]} alt="Tree Image" className="slider-image" />
-              <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2></div>
+              <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
               <div className="content">
                 <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
                 <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
-                <p>{slides[activeSlideIndex] && slides[activeSlideIndex].content}</p>
+                <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content}</p>
               </div>
+              </div>
+
               <div className="arrows">
                 <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
                 <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
-              </div>
-            </div>
+                </div>
+                </div>
           </div>
         </Col>
       </Row>

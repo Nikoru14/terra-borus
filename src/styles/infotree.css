@@ -1,4 +1,6 @@
-
+.paradescrip{
+    color: white;
+}
 .slider{
     height: 100vh;
     margin-top: -50px;
@@ -91,12 +93,10 @@
     bottom: 50px;
     z-index: 11;
     display: flex;
-    gap: 10px;
-    width: 100%;
+    width: 90%;
     height: 250px;
     padding: 0 50px;
     box-sizing: border-box;
-    overflow: auto;
     justify-content: center;
 }
 .thumbnail::-webkit-scrollbar{
