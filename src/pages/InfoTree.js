@@ -45,6 +45,7 @@ const InfoTree = () => {
     };
   };
 
+  
   useEffect(() => {
     startAutoSlide();
   }, []);
