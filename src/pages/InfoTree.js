@@ -17,7 +17,7 @@ const InfoTree = () => {
       setTreeInfo(currentTreeInfo);
       setSlides([
         {
-          content: (
+          content1: (
             <div>
               <p><strong>Scientific Name:</strong> {currentTreeInfo.scientificName}</p>
               <p><strong>Description:</strong> {currentTreeInfo.description}</p>
@@ -33,19 +33,19 @@ const InfoTree = () => {
         },
         {
           title: "Flowering Description",
-          content: currentTreeInfo.floweringDescription,
+          content1: currentTreeInfo.floweringDescription,
         },
         {
           title: "Fruiting Description",
-          content: currentTreeInfo.fruitingDescription,
+          content1: currentTreeInfo.fruitingDescription,
         },
         {
           title: "Unripe Fruit Description",
-          content: currentTreeInfo.unripeFruitDescription,
+          content1: currentTreeInfo.unripeFruitDescription,
         },
         {
           title: "Ripe Fruit Description",
-          content: currentTreeInfo.ripeFruitDescription,
+          content1: currentTreeInfo.ripeFruitDescription,
         },
       ]);
     } else {
@@ -67,16 +67,16 @@ const InfoTree = () => {
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content1-md-center">
         <Col md={9}>
           <div className="slider">
             <div className="thumbnail">
               <img src={treeInfo.imgUrl[activeSlideIndex]} alt="Tree Image" className="slider-image" />
               <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
-              <div className="content">
+              <div className="content1">
                 <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
                 <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
-                <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content}</p>
+                <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
               </div>
               </div>
 

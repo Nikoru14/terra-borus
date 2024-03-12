@@ -15,6 +15,7 @@ import ContactForm from './pages/ContactForm';
 import AdminSmspin from './pages/AdminSmspin';
 import InfoTree from './pages/InfoTree';
 import AddTree from './pages/AddTree';
+import AboutTree from './pages/AboutTree';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/AdminSmspin' element={<AdminSmspin />} />
         <Route path='/InfoTree' element={<InfoTree />} />
         <Route path='/AddTree' element={<AddTree />} />
+        <Route path='/AboutTree' element={<AboutTree />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
