@@ -1,0 +1,43 @@
+.card3{
+    background: rgba(255, 255, 252, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(255, 255, 252, 0.27);
+    margin: 5%;
+    padding: 5%;
+}
+
+.addtree {
+    text-align: center;
+    position: relative;
+    color: lightgreen;
+    font-weight: bold;
+    font-family: "Anonymous Pro", monospace;
+    letter-spacing: 7px;
+    overflow: hidden;
+    border-right: 2px solid hsl(0, 0%, 80%);
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both,
+      blinkTextCursor 500ms infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 250px;
+    }
+  }
+  @keyframes blinkTextCursor {
+    from {
+      border-right-color: hsl(0, 0%, 80%);
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
+  
