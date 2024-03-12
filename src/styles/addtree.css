@@ -8,7 +8,9 @@
     margin: 5%;
     padding: 5%;
 }
-
+.form-group{
+    color: white;
+}
 .addtree {
     text-align: center;
     position: relative;
@@ -32,6 +34,7 @@
       width: 250px;
     }
   }
+
   @keyframes blinkTextCursor {
     from {
       border-right-color: hsl(0, 0%, 80%);
