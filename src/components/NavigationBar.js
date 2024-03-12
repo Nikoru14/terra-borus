@@ -34,7 +34,7 @@ const NavigationBar = () => {
                 <Nav className="nav_bar mr-auto">
                     <Nav.Link className="nav_link_custom" href="/">Home</Nav.Link>
                     <Nav.Link className="nav_link_custom" href="/blog">Blog</Nav.Link>
-                    <Nav.Link className="nav_link_custom" href="/">About</Nav.Link>
+                    <Nav.Link className="nav_link_custom" href="/AboutTree">About</Nav.Link>
                     <Nav.Link className="nav_link_custom" href="/ContactForm">Contact</Nav.Link>
                     <Nav.Link className="button1" href="/AddTree">Add Tree</Nav.Link>
                 </Nav>
