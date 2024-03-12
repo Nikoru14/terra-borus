@@ -10,13 +10,16 @@ const InfoTree = () => {
   const [treeInfo, setTreeInfo] = useState(null);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [slides, setSlides] = useState([]);
+  const [thumbnails, setThumbnails] = useState([]);
 
   useEffect(() => {
     if (treeId && treeData[treeId]) {
       const currentTreeInfo = treeData[treeId];
       setTreeInfo(currentTreeInfo);
+      setThumbnails(currentTreeInfo.imgUrl);
       setSlides([
         {
+          title: 'Main Description',
           content1: (
             <div>
               <p><strong>Scientific Name:</strong> {currentTreeInfo.scientificName}</p>
@@ -54,11 +57,30 @@ const InfoTree = () => {
   }, [treeId]);
 
   const handleNext = () => {
-    setActiveSlideIndex((prevIndex) => (prevIndex + 1) % (treeInfo.imgUrl.length || 1));
+    setActiveSlideIndex((prevIndex) => (prevIndex + 1) % (thumbnails.length || 1));
   };
 
   const handlePrev = () => {
-    setActiveSlideIndex((prevIndex) => (prevIndex - 1 + (treeInfo.imgUrl.length || 1)) % (treeInfo.imgUrl.length || 1));
+    setActiveSlideIndex((prevIndex) => (prevIndex - 1 + (thumbnails.length || 1)) % (thumbnails.length || 1));
+  };
+
+  const renderThumbnails = () => {
+    return thumbnails.map((thumbnail, index) => (
+      <div key={index} className="thumbnail-item" onClick={() => setActiveSlideIndex(index)}>
+        <div className="thumbnail-title">{slides[index] && slides[index].title}</div>
+        <img
+          src={thumbnail}
+          alt={`Slide ${index}`}
+          className={`thumbnail-image ${index === activeSlideIndex ? 'active' : ''}`}
+        />
+      </div>
+    ));
+  };
+
+  const bgStyle = {
+    backgroundImage: `url(${thumbnails[activeSlideIndex]})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
   };
 
   if (!treeInfo) {
@@ -66,29 +88,34 @@ const InfoTree = () => {
   }
 
   return (
-    <Container>
-      <Row className="justify-content1-md-center">
-        <Col md={9}>
-          <div className="slider">
-            <div className="thumbnail">
-              <img src={treeInfo.imgUrl[activeSlideIndex]} alt="Tree Image" className="slider-image" />
-              <div className="container"><h2><strong>Tree: </strong>{treeInfo.name}</h2>
-              <div className="content1">
-                <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
-                <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
-                <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
-              </div>
-              </div>
-
-              <div className="arrows">
-                <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
-                <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
+    <>
+      <div className='slider-bg' style={bgStyle} />
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md={9}>
+            <div className="slider">
+              <div className="slider-content">
+                <div className="container">
+                  <h2 style={{ marginTop: "50px" }}><strong>Tree: </strong>{treeInfo.name}</h2>
+                  <div className="content1">
+                    <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
+                    <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
+                    <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
+                  </div>
                 </div>
+                <div className="arrows" style={{ position: 'absolute', top: '120px', right: '10px' }}>
+                  <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
+                  <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
                 </div>
-          </div>
-        </Col>
-      </Row>
-    </Container>
+              </div>
+            </div>
+            <div className="thumbnail-container">
+              {renderThumbnails()}
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
