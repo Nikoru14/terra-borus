@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/contactform.css';
 import NavigationBar from "../components/NavigationBar";
+import Faqs from "../components/Faqs";
+import Footer from "../components/Footer";
 
 const ContactForm = () => {
     return (
@@ -55,6 +57,15 @@ const ContactForm = () => {
                 </div>
             </div>
         </section>
+              {/* Faqs Section */}
+      <div className='faqss'>
+        <Faqs />
+      </div>     
+
+      {/* Footer Section */}
+      <footer>
+        <Footer />
+      </footer>
         </>
     );
 };

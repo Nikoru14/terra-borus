@@ -10,6 +10,7 @@
 }
 
 .mapContainer {
+    margin-top: 2%;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -19,6 +20,26 @@
     position: relative;
 }
 
+.treelist{
+  padding-top: 190px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  pointer-events: auto;
+  border-radius: 30px;
+  position: relative;
+}
+.faqss{
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 190px;
+  padding-bottom: 100px;
+  width: 50%;
+  border-radius: 30px;
+  position: relative;
+}
 
 canvas {
     position: fixed;

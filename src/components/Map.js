@@ -7,7 +7,7 @@ import treePins from '../json/TreePins.json'; // Assuming this path is correct
 import treeData from '../json/TreeData.json'; // Assuming this path is correct
 import '../styles/tree.css'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
-
+import TreeList from './TreeList';
 
 // The following is required to stop "npm build" from transpiling mapbox code.
 // notice the exclamation point in the import.
@@ -60,6 +60,7 @@ const Map = () => {
     return (
         <>
             <MapNavBar />
+            <br></br>
             <ReactMapGL
                 {...viewport}
                 mapboxAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
@@ -69,8 +70,10 @@ const Map = () => {
                 //onClick={handleMapClick}
                 style={{ borderRadius: '30px' }}
             >
+                
                 <div style={{ position: 'absolute', right: 10, top: 10 }}>
                     <NavigationControl />
+                    
                 </div>
                 {treePins.map((pin, index) => (
                     <Marker key={index} latitude={pin.latitude} longitude={pin.longitude}>
@@ -91,12 +94,13 @@ const Map = () => {
                             <h3 class="card_tree">{selectedTree.details.name || 'Tree Details'}</h3>
                             <strong>Scientific Name:</strong><p class="italic">{selectedTree.details.scientificName}</p>
                             <p><strong>Description: </strong>{selectedTree.details.description}</p>
-                            <Link to={`/TreeInfo?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
+                            <Link to={`/InfoTree?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
                             {/* Include any other details you wish to show */}
                         </div>
                     </Popup>
                 )}
             </ReactMapGL>
+            
         </>
     );
 };
@@ -104,8 +108,9 @@ const Map = () => {
 const MapNavBar = () => {
 
     return (
+        <>
         <div className="nav" expand="lg">
-            <Navbar.Brand href="/"><div className='overview'>Map Overview</div></Navbar.Brand>
+            <Navbar.Brand href="/"><div className='overview12'>Map Overview</div></Navbar.Brand>
             <Nav className="nav_bar1 d-flex justify-content-end">
                 <NavDropdown title="Trees Species" id="species-dropdown" className="species">
                     <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
@@ -131,7 +136,11 @@ const MapNavBar = () => {
                     <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
+
         </div>
+
+
+    </> 
     );
 }
 

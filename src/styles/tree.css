@@ -3,6 +3,37 @@
     color: #f0f0f0;
 }
 
+.overview12 {
+  font-size: xx-large;
+  color: white;
+  position: relative;
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 3px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  white-space: nowrap;
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+  margin: 0 50px;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 
 .container {
   min-width: 100%;

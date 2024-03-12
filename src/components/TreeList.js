@@ -48,7 +48,7 @@ const Card = ({ name, description, imgUrl, buttonUrl }) => {
                     <p style={{ margin: 0 }}>{description}</p>
                 </div> 
                 <div className='grid4'>
-                    <Link to={`/TreeInfo?treeId=${buttonUrl}`} className="button_view" role="button">Read More</Link>
+                    <Link to={`/InfoTree?treeId=${buttonUrl}`} className="button_view" role="button">Read More</Link>
                 </div>
             </div>
         </div>
