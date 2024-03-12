@@ -94,7 +94,7 @@ const Map = () => {
                             <h3 class="card_tree">{selectedTree.details.name || 'Tree Details'}</h3>
                             <strong>Scientific Name:</strong><p class="italic">{selectedTree.details.scientificName}</p>
                             <p><strong>Description: </strong>{selectedTree.details.description}</p>
-                            <Link to={`/TreeInfo?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
+                            <Link to={`/InfoTree?treeId=${selectedTree.speciesId}`} className="button_view" role="button">Read More</Link>
                             {/* Include any other details you wish to show */}
                         </div>
                     </Popup>
