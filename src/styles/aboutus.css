@@ -106,12 +106,47 @@ header a {
   gap: 20px;
 }
 
+
 .thumbnail .item {
   width: 150px;
   height: 220px;
   flex-shrink: 0;
   position: relative;
+
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  will-change: transform, opacity;
+
+
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.thumbnail .item {
+  animation: slideIn 0.5s ease forwards;
+}
+
+.thumbnail .item.exit {
+  animation: slideOut 0.5s ease forwards;
+}
+
 
 .thumbnail .item img {
   width: 100%;
@@ -134,6 +169,16 @@ header a {
 
 .thumbnail .item .content .description {
   font-weight: 300;
+}
+
+.thumbnail .item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.thumbnail .item.active {
+  border: 2px solid #f00;
+  /* Example: red border for active item */
 }
 
 .arrows {
@@ -169,11 +214,11 @@ header a {
   z-index: 1;
 }
 
-.carousel .list .item:nth-child(1) .content .author,
-.carousel .list .item:nth-child(1) .content .title,
-.carousel .list .item:nth-child(1) .content .topic,
-.carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons {
+.carousel .list .item.active .content .author,
+.carousel .list .item.active .content .title,
+.carousel .list .item.active .content .topic,
+.carousel .list .item.active .content .des,
+.carousel .list .item.active .content .buttons {
   transform: translateY(50px);
   filter: blur(20px);
   opacity: 0;
@@ -188,23 +233,23 @@ header a {
   }
 }
 
-.carousel .list .item:nth-child(1) .content .title {
+.carousel .list .item.active .content .title {
   animation-delay: 1.2s !important;
 }
 
-.carousel .list .item:nth-child(1) .content .topic {
+.carousel .list .item.active .content .topic {
   animation-delay: 1.4s !important;
 }
 
-.carousel .list .item:nth-child(1) .content .des {
+.carousel .list .item.active .content .des {
   animation-delay: 1.6s !important;
 }
 
-.carousel .list .item:nth-child(1) .content .buttons {
+.carousel .list .item.active .content .buttons {
   animation-delay: 1.8s !important;
 }
 
-.carousel.next .list .item:nth-child(1) img {
+.carousel.next .list .item.active img {
   width: 150px;
   height: 220px;
   position: absolute;
@@ -330,6 +375,44 @@ header a {
 
   .carousel .list .item .content .title {
     font-size: 30px;
+  }
+}
+
+/* Slide animations */
+.carousel .list .item.active {
+  /* Ensure the active slide has an animation */
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Thumbnail animations */
+.thumbnail .item.active {
+  /* Example animation for the active thumbnail */
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Add exiting class dynamically in React component for outgoing slides */
+.thumbnail .item.exit {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
   }
 }
 

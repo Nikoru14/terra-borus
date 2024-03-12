@@ -3,73 +3,94 @@ import { Button } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import '../styles/aboutus.css';
 
+
+const initialSlides = [
+  {
+    img: "./bg.png",
+    author: "ABOUT US",
+    title: "TERRABORUS",
+    topic: "LAGUNA STATE POLYTECHNIC UNIVERSITY",
+    des: "Terraborus, a research with LSPU-Siniloan Campus, is a pioneering Geographic Information System (GIS) merging with QR technology to map indigenous fruit and forest trees. Every tree is labeled with a unique QR code, allowing users to scan for essential details such as species, status, and content. This innovative approach not only enhances conservation efforts but also promotes community engagement and awareness in preserving our rich natural heritage.",
+    popup: "popupcontent1"
+  },
+  {
+    img: "./bg.png",
+    author: "",
+    title: "DESIGN SLIDER",
+    topic: "SLIDER 2",
+    des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    popup: "popupcontent2"
+  },
+  {
+    img: "./bg.png",
+    author: "",
+    title: "DESIGN SLIDER",
+    topic: "SLIDER 3",
+    des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    popup: "popupcontent3"
+  },
+  {
+    img: "./bg.png",
+    author: "",
+    title: "DESIGN SLIDER",
+    topic: "SLIDER 4",
+    des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
+    popup: "popupcontent4"
+  }
+];
+
+
+
 const AboutUs = () => {
   const [currentPopup, setCurrentPopup] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0); // State to track the current slide
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slides, setSlides] = useState(initialSlides);
 
-  const showPopup = (popupId) => {
-    setCurrentPopup(popupId);
-  };
+  const showPopup = (popupId) => setCurrentPopup(popupId);
+  const closePopup = () => setCurrentPopup(null);
 
-  const closePopup = () => {
-    setCurrentPopup(null);
-  };
-
-  // Adjusted showSlider function to handle slide changes
-  const showSlider = (type) => {
-    if (type === 'next') {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % 4); // Assuming 4 slides for simplicity
-    } else if (type === 'prev') {
-      setCurrentSlide((prevSlide) => (prevSlide - 1 + 4) % 4); // Loop back to the last slide if going back from the first one
+  const rearrangeSlides = (newIndex) => {
+    let rearranged = [...slides];
+    if (newIndex === 0) {
+      rearranged = [...slides];
     } else {
-      setCurrentSlide(type);
+      const movedItem = rearranged.splice(newIndex, 1)[0];
+      rearranged = [movedItem, ...rearranged];
     }
+    return rearranged;
   };
 
-  // Adjust useEffect for auto-advancing slides
-  useEffect(() => {
-    const runNextAuto = setTimeout(() => {
-      showSlider('next');
-    }, 7000); // Change slides every 7 seconds
-
-    return () => clearTimeout(runNextAuto);
-  }, [currentSlide]); // Rerun the effect when currentSlide changes
-
-  const slides = [
-    {
-      img: "./bg.png",
-      author: "ABOUT US",
-      title: "TERRABORUS",
-      topic: "LAGUNA STATE POLYTECHNIC UNIVERSITY",
-      des: "Terraborus, a research with LSPU-Siniloan Campus, is a pioneering Geographic Information System (GIS) merging with QR technology to map indigenous fruit and forest trees. Every tree is labeled with a unique QR code, allowing users to scan for essential details such as species, status, and content. This innovative approach not only enhances conservation efforts but also promotes community engagement and awareness in preserving our rich natural heritage.",
-      popup: "popupcontent1"
-    },
-    {
-      img: "./bg.png",
-      author: "",
-      title: "DESIGN SLIDER",
-      topic: "SLIDER 1",
-      des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
-      popup: "popupcontent2"
-    },
-    {
-      img: "./bg.png",
-      author: "",
-      title: "DESIGN SLIDER",
-      topic: "SLIDER 3",
-      des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
-      popup: "popupcontent3"
-    },
-    {
-      img: "./bg.png",
-      author: "",
-      title: "DESIGN SLIDER",
-      topic: "SLIDER 4",
-      des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?",
-      popup: "popupcontent4"
+  const showSlider = (type) => {
+    let newSlideIndex;
+    if (type === 'next') {
+      newSlideIndex = (currentSlide + 1) % slides.length;
+    } else if (type === 'prev') {
+      newSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
+    } else {
+      newSlideIndex = type;
     }
-  ];
 
+    // Trigger the exit animation for the current active slide
+    document.querySelectorAll('.thumbnail .item').forEach((item, index) => {
+      if (index === currentSlide) {
+        item.classList.add('exit');
+      }
+    });
+
+    setTimeout(() => {
+      const rearranged = rearrangeSlides(newSlideIndex);
+      setCurrentSlide(0); // Always set to the first item because we're rearranging slides to make the new active slide first
+      setSlides(rearranged);
+
+      // Remove the 'exit' class after rearrangement
+      document.querySelectorAll('.thumbnail .item').forEach(item => item.classList.remove('exit'));
+    }, 500); // Adjust timeout to match the duration of the exit animation
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => showSlider('next'), 7000);
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
 
 
   return (
@@ -95,51 +116,21 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="thumbnail">
-          <div className="item">
-            <img src="./bg.png" />
-            <div className="content">
-              <div className="title">
-                Name Slider 1
-              </div>
-              <div className="description">
-                Description
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="./bg.png" />
-            <div className="content">
-              <div className="title">
-                Name Slider 2
-              </div>
-              <div className="description">
-                Description
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`item ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => showSlider(index)}
+            >
+              <img src={slide.img} alt={`Thumbnail ${index + 1}`} />
+              <div className="content">
+                <div className="title">{slide.title}</div>
+                <div className="description">{slide.topic}</div>
               </div>
             </div>
-          </div>
-          <div className="item">
-            <img src="./bg.png" />
-            <div className="content">
-              <div className="title">
-                Name Slider 3
-              </div>
-              <div className="description">
-                Description
-              </div>
-            </div>
-          </div>
-          <div className="item">
-            <img src="./bg.png" />
-            <div className="content">
-              <div className="title">
-                Name Slider 4
-              </div>
-              <div className="description">
-                Description
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
+
         <div className="arrows">
           <Button variant="prev" onClick={() => showSlider('prev')}>{'<'}</Button>
           <Button variant="next" onClick={() => showSlider('next')}>{'>'}</Button>
