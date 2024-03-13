@@ -109,10 +109,12 @@ const InfoTree = () => {
                 </div>
               </div>
             </div>
-            <div className="thumbnail-container">
+          </Col>
+        </Row>
+        <Row>
+        <div className="thumbnail-container">
               {renderThumbnails()}
             </div>
-          </Col>
         </Row>
       </Container>
     </>

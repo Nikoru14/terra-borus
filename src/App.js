@@ -111,6 +111,8 @@ function particles() {
   }
   setTimeout(particles,1000/rate);
 }
+
+
 function MouseMove(e) {
    mouse.x = e.layerX;
    mouse.y = e.layerY;
