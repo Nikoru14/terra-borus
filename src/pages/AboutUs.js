@@ -44,15 +44,11 @@ const initialSlides = [
 const AboutUs = () => {
   const [currentPopup, setCurrentPopup] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const slides = useRef(initialSlides);
-
-  // This will dynamically reorder slides so the active one is always first
-  const orderedSlides = [initialSlides[activeIndex], ...initialSlides.slice(activeIndex + 1), ...initialSlides.slice(0, activeIndex)];
 
   const showPopup = (popupId) => setCurrentPopup(popupId);
   const closePopup = () => setCurrentPopup(null);
 
-  const rotateSlides = (direction) => {
+  const switchSlides = (direction) => {
     let newIndex = 0;
     if (direction === 'next') {
       newIndex = (activeIndex + 1) % initialSlides.length;
@@ -63,10 +59,9 @@ const AboutUs = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => rotateSlides('next'), 7000);
+    const timer = setTimeout(() => switchSlides('next'), 7000);
     return () => clearTimeout(timer);
   }, [activeIndex]);
-
 
   return (
     <>
@@ -74,7 +69,7 @@ const AboutUs = () => {
       <div>
         <div className="carousel">
           <div className="list">
-            {slides.current.map((slide, index) => (
+            {initialSlides.map((slide, index) => (
               <div className={`item ${index === activeIndex ? 'active' : ''}`} key={index}>
                 <img src={slide.img} alt={`Slide ${index + 1}`} />
                 <div className="content">
@@ -91,11 +86,11 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="thumbnail">
-          {orderedSlides.map((slide, index) => (
+          {initialSlides.map((slide, index) => (
             <div
-              key={index}
-              className={`item ${index === 0 ? 'active enter' : 'exit'}`} // Dynamically apply classes for animation
-              onClick={() => setActiveIndex(initialSlides.indexOf(slide))} // Update active index based on slide clicked
+              key={slide.title}
+              className={`item ${index === activeIndex ? 'active' : ''}`}
+              onClick={() => setActiveIndex(index)}
             >
               <img src={slide.img} alt={`Thumbnail ${index + 1}`} />
               <div className="content">
@@ -106,8 +101,8 @@ const AboutUs = () => {
           ))}
         </div>
         <div className="arrows">
-          <Button variant="prev" onClick={() => rotateSlides('prev')}>{'<'}</Button>
-          <Button variant="next" onClick={() => rotateSlides('next')}>{'>'}</Button>
+          <Button variant="prev" onClick={() => switchSlides('prev')}>{'<'}</Button>
+          <Button variant="next" onClick={() => switchSlides('next')}>{'>'}</Button>
         </div>
         <div className="time"></div>
       </div>
