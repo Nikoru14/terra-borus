@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import '../styles/aboutus.css';
+import { act } from 'react-dom/test-utils';
 
 
 const initialSlides = [
@@ -40,57 +41,31 @@ const initialSlides = [
 ];
 
 
-
 const AboutUs = () => {
   const [currentPopup, setCurrentPopup] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [slides, setSlides] = useState(initialSlides);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const slides = useRef(initialSlides);
+
+  // This will dynamically reorder slides so the active one is always first
+  const orderedSlides = [initialSlides[activeIndex], ...initialSlides.slice(activeIndex + 1), ...initialSlides.slice(0, activeIndex)];
 
   const showPopup = (popupId) => setCurrentPopup(popupId);
   const closePopup = () => setCurrentPopup(null);
 
-  const rearrangeSlides = (newIndex) => {
-    let rearranged = [...slides];
-    if (newIndex === 0) {
-      rearranged = [...slides];
-    } else {
-      const movedItem = rearranged.splice(newIndex, 1)[0];
-      rearranged = [movedItem, ...rearranged];
+  const rotateSlides = (direction) => {
+    let newIndex = 0;
+    if (direction === 'next') {
+      newIndex = (activeIndex + 1) % initialSlides.length;
+    } else if (direction === 'prev') {
+      newIndex = (activeIndex - 1 + initialSlides.length) % initialSlides.length;
     }
-    return rearranged;
-  };
-
-  const showSlider = (type) => {
-    let newSlideIndex;
-    if (type === 'next') {
-      newSlideIndex = (currentSlide + 1) % slides.length;
-    } else if (type === 'prev') {
-      newSlideIndex = (currentSlide - 1 + slides.length) % slides.length;
-    } else {
-      newSlideIndex = type;
-    }
-
-    // Trigger the exit animation for the current active slide
-    document.querySelectorAll('.thumbnail .item').forEach((item, index) => {
-      if (index === currentSlide) {
-        item.classList.add('exit');
-      }
-    });
-
-    setTimeout(() => {
-      const rearranged = rearrangeSlides(newSlideIndex);
-      setCurrentSlide(0); // Always set to the first item because we're rearranging slides to make the new active slide first
-      setSlides(rearranged);
-
-      // Remove the 'exit' class after rearrangement
-      document.querySelectorAll('.thumbnail .item').forEach(item => item.classList.remove('exit'));
-    }, 500); // Adjust timeout to match the duration of the exit animation
+    setActiveIndex(newIndex);
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => showSlider('next'), 7000);
+    const timer = setTimeout(() => rotateSlides('next'), 7000);
     return () => clearTimeout(timer);
-  }, [currentSlide]);
+  }, [activeIndex]);
 
 
   return (
@@ -99,8 +74,8 @@ const AboutUs = () => {
       <div>
         <div className="carousel">
           <div className="list">
-            {slides.map((slide, index) => (
-              <div className={`item ${index === currentSlide ? 'active' : ''}`} key={index}>
+            {slides.current.map((slide, index) => (
+              <div className={`item ${index === activeIndex ? 'active' : ''}`} key={index}>
                 <img src={slide.img} alt={`Slide ${index + 1}`} />
                 <div className="content">
                   {slide.author && <div className="author">{slide.author}</div>}
@@ -116,11 +91,11 @@ const AboutUs = () => {
           </div>
         </div>
         <div className="thumbnail">
-          {slides.map((slide, index) => (
+          {orderedSlides.map((slide, index) => (
             <div
               key={index}
-              className={`item ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => showSlider(index)}
+              className={`item ${index === 0 ? 'active enter' : 'exit'}`} // Dynamically apply classes for animation
+              onClick={() => setActiveIndex(initialSlides.indexOf(slide))} // Update active index based on slide clicked
             >
               <img src={slide.img} alt={`Thumbnail ${index + 1}`} />
               <div className="content">
@@ -130,10 +105,9 @@ const AboutUs = () => {
             </div>
           ))}
         </div>
-
         <div className="arrows">
-          <Button variant="prev" onClick={() => showSlider('prev')}>{'<'}</Button>
-          <Button variant="next" onClick={() => showSlider('next')}>{'>'}</Button>
+          <Button variant="prev" onClick={() => rotateSlides('prev')}>{'<'}</Button>
+          <Button variant="next" onClick={() => rotateSlides('next')}>{'>'}</Button>
         </div>
         <div className="time"></div>
       </div>
@@ -142,21 +116,26 @@ const AboutUs = () => {
         <span className="popup-close" onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
+        <p>lalala</p>
       </div>
       <div id="popupcontent2" className={`popup ${currentPopup === 'popupcontent2' ? 'active' : ''}`}>
         <span className="popup-close" onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
+        <p>test2</p>
       </div>
       <div id="popupcontent3" className={`popup ${currentPopup === 'popupcontent3' ? 'active' : ''}`}>
         <span className="popup-close" onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
+        <p>test 3</p>
       </div>
       <div id="popupcontent4" className={`popup ${currentPopup === 'popupcontent4' ? 'active' : ''}`}>
         <span className="popup-close" onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
+        <p>sleep when?</p>
+
       </div>
 
       <div className="we-are-block">

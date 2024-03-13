@@ -103,6 +103,7 @@ header a {
   width: max-content;
   z-index: 100;
   display: flex;
+  overflow-x: auto;
   gap: 20px;
 }
 
@@ -112,11 +113,6 @@ header a {
   height: 220px;
   flex-shrink: 0;
   position: relative;
-
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  will-change: transform, opacity;
-
-
 }
 
 @keyframes slideIn {
@@ -139,7 +135,7 @@ header a {
   }
 }
 
-.thumbnail .item {
+.thumbnail .item.enter {
   animation: slideIn 0.5s ease forwards;
 }
 
@@ -177,7 +173,7 @@ header a {
 }
 
 .thumbnail .item.active {
-  border: 2px solid #f00;
+  border: 2px solid green;
   /* Example: red border for active item */
 }
 
@@ -378,10 +374,12 @@ header a {
   }
 }
 
-/* Slide animations */
-.carousel .list .item.active {
-  /* Ensure the active slide has an animation */
-  animation: fadeIn 0.5s forwards;
+.item.enter {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.item.exit {
+  animation: fadeOut 0.5s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -392,18 +390,6 @@ header a {
   to {
     opacity: 1;
   }
-}
-
-/* Thumbnail animations */
-.thumbnail .item.active {
-  /* Example animation for the active thumbnail */
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-/* Add exiting class dynamically in React component for outgoing slides */
-.thumbnail .item.exit {
-  animation: fadeOut 0.5s forwards;
 }
 
 @keyframes fadeOut {
@@ -429,6 +415,11 @@ header a {
   z-index: 9999;
   max-width: 90%;
   width: 300px;
+  text-align: center;
+}
+
+.popup.active {
+  display: flex;
 }
 
 .popup-close {
