@@ -231,15 +231,15 @@
   }
   
   .btn.transparent {
-    margin: 0;
+    margin: 0 auto;
     background: none;
     border: 2px solid #fff;
     width: 130px;
     height: 41px;
     font-weight: 600;
     font-size: 0.8rem;
-  }
-  
+}
+
   .right-panel .image,
   .right-panel .content {
     transform: translateX(800px);

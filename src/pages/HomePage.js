@@ -7,6 +7,7 @@ import '../styles/navbar.css'
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import TreeList from '../components/TreeList';
+import Gallery from '../components/Gallery';
 import Footer from '../components/Footer';
 import Faqs from '../components/Faqs';
 // import FAQ from '../components/FAQ';
@@ -27,6 +28,11 @@ const HomePage = () => {
       {/* TreeList Section */}
       <div className='treelist'>
         <TreeList />
+      </div>     
+
+      {/* Gallery Section */}
+      <div className='gallerys'>
+        <Gallery />
       </div>     
 
       {/* Faqs Section */}
