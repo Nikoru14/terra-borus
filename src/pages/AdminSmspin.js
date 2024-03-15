@@ -44,9 +44,9 @@ const AdminSmspin = () => {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary submit_btn my-4">
+            <a href="./AddTree" class="btn btn-primary submit_btn my-4">
               Submit
-            </button>
+            </a>
 
             <div className="fw-normal text-muted mb-2">
               Didn’t get the code ?{' '}

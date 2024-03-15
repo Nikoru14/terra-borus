@@ -10,7 +10,7 @@ const AuthPage = () => {
                 <div className="forms-container" id="webcoderskull">
                     <div className="signin-signup">
                         {/* Sign-in form */}
-                        <form action="#" className="sign-in-form">
+                        <form action="./AddTree" className="sign-in-form">
                             <h2 className="title">Sign in</h2>
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
@@ -38,7 +38,7 @@ const AuthPage = () => {
                             </div>
                         </form>
                         {/* Sign-up form */}
-                        <form action="#" className="sign-up-form">
+                        <form action="./AdminSmspin" className="sign-up-form">
                             <h2 className="title">Sign up</h2>
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
