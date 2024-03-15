@@ -50,7 +50,7 @@ var w = window.innerWidth,
   size = 15,
   speed = 40,
   parts = new Array,
-  colors = ['green', 'forest', 'parakeet', 'lime', 'chartreuse'];
+  colors = ['honeydew', 'nyanza', 'tea green', 'celadon', 'pistachio'];
 var mouse = { x: 0, y: 0 };
 
 canvas.setAttribute('width', w);
@@ -129,3 +129,4 @@ function DistanceBetween(p1, p2) {
 
 create();
 particles();
+

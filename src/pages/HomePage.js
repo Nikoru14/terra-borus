@@ -41,7 +41,7 @@ const HomePage = () => {
       </div>     
 
       {/* Footer Section */}
-      <footer>
+      <footer className='footer1'>
         <Footer />
       </footer>
     </>

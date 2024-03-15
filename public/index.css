@@ -60,7 +60,7 @@ canvas {
     height: 100%;
     overflow: hidden;
     background-size: cover;
-    z-index: auto;
+    z-index: -1;
     background-repeat: no-repeat;
 }
 
@@ -100,3 +100,8 @@ canvas {
 img {
     border-radius: 50%;
   }
+
+  #particles-js {
+    background: black;
+    height: 100vh;
+}

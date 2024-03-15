@@ -40,6 +40,26 @@ const initialSlides = [
   }
 ];
 
+const seeMoreBtns = document.querySelectorAll(".seeMoreBtn");
+const popups = document.querySelectorAll(".popup");
+
+seeMoreBtns.forEach((button, index) => {
+    button.addEventListener("click", function() {
+        popups.forEach(popup => {
+            popup.style.display = "none";
+        });
+        const popupId = this.getAttribute("data-popup");
+        document.getElementById(popupId).style.display = "block";
+    });
+});
+
+const closeButtons = document.querySelectorAll(".popup-close");
+closeButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        this.parentNode.style.display = "none";
+    });
+});
+
 
 const AboutUs = () => {
   const [currentPopup, setCurrentPopup] = useState(null);
