@@ -97,7 +97,7 @@ const InfoTree = () => {
               <div className="slider-content">
                 <div className="container">
                   <h2 style={{ marginTop: "50px" }}><strong>Tree: </strong>{treeInfo.name}</h2>
-                  <div className="content1">
+                  <div className="content2">
                     <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
                     <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
                     <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
@@ -107,14 +107,12 @@ const InfoTree = () => {
                   <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
                   <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
                 </div>
+                <div className="thumbnail-container">
+              {renderThumbnails()}
+            </div>
               </div>
             </div>
           </Col>
-        </Row>
-        <Row>
-        <div className="thumbnail-container">
-              {renderThumbnails()}
-            </div>
         </Row>
       </Container>
     </>
