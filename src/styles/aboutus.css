@@ -736,6 +736,7 @@
   }
 
   .team {
+    margin-top: 50px;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -746,6 +747,7 @@
   }
 
   .title {
+    margin-bottom: 75px;
     font-size: 40px;
     font-weight: 700;
   }
@@ -769,14 +771,14 @@
     justify-content: flex-end;
     flex-direction: column;
     padding-top: 20px;
-    margin: 20px;
+    margin: 50px;
     max-height: 100px;
     transition: 0.5s ease-in-out;
   }
 
   .profile img {
-    width: 40px;
-    height: 40px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     position: relative;
     z-index: 2;
@@ -788,6 +790,7 @@
     align-items: center;
     font-size: 16px;
     font-weight: 600;
+    color: white;
   }
 
   .details span {

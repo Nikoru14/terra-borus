@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import '../styles/aboutus.css';
+import rancapImage from '../images/profile/rancap.jpg';
+import bongatImage from '../images/profile/bongat.jpg';
+import bolinasImage from '../images/profile/bolinas.jpg';
+import hiyasImage from '../images/profile/hiyas.png';
 import { act } from 'react-dom/test-utils';
-
+import Faqs from "../components/Faqs";
+import Footer from "../components/Footer";
 
 const initialSlides = [
   {
@@ -198,11 +203,11 @@ const AboutUs = () => {
               <div className="profile">
                 <div className="card">
                   <div className="head">
-                    <img src="./bg.png" alt="" />
-                    <div className="name">Name 1</div>
+                  <img src={rancapImage} alt=""/>
+                    <div className="name">Sharlyn Rancap</div>
                   </div>
                   <div className="content">
-                    <div className="role">Role 1</div>
+                    <div className="role">Team Leader</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
                     accusamus fuga.
                   </div>
@@ -213,21 +218,21 @@ const AboutUs = () => {
                   </div>
                 </div>
 
-                <img src="./bg.png" alt="" id="picture" />
+                <img src={rancapImage} alt="" id="picture" />
                 <div className="details">
-                  Name 1
-                  <span>Role 1</span>
+                Sharlyn Rancap
+                  <span>Team Leader</span>
                 </div>
               </div>
 
               <div className="profile">
                 <div className="card">
                   <div className="head">
-                    <img src="./bg.png" alt="" />
-                    <div className="name">Name 2</div>
+                  <img src={bongatImage} alt=""/>
+                    <div className="name">Nikko Bongat</div>
                   </div>
                   <div className="content">
-                    <div className="role">Role 2</div>
+                    <div className="role">Programmer</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Consectetur, harum recusandae!
                   </div>
@@ -238,21 +243,21 @@ const AboutUs = () => {
                   </div>
                   <div className="pattern"></div>
                 </div>
-                <img src="./bg.png" alt="" id="picture" />
+                <img src={bongatImage} alt="" id="picture" />
                 <div className="details">
-                  Name 2
-                  <span>Role 2</span>
+                Nikko Bongat
+                  <span>Programmer</span>
                 </div>
               </div>
 
               <div className="profile">
                 <div className="card">
                   <div className="head">
-                    <img src="./bg.png" alt="" />
-                    <div className="name">Name 3</div>
+                  <img src={bolinasImage} alt=""/>
+                    <div className="name">Symon Christopher Bolinas</div>
                   </div>
                   <div className="content">
-                    <div className="role">Role 3</div>
+                    <div className="role">Graphics</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                     magni distinctio quae.
                   </div>
@@ -263,21 +268,21 @@ const AboutUs = () => {
                   </div>
                   <div className="pattern"></div>
                 </div>
-                <img src="./bg.png" alt="" id="picture" />
+                <img src={bolinasImage} alt="" id="picture" />
                 <div className="details">
-                  Name 3
-                  <span>Role 3</span>
+                  Symon Christopher Bolinas
+                  <span>Graphics</span>
                 </div>
               </div>
 
               <div className="profile">
                 <div className="card">
                   <div className="head">
-                    <img src="./bg.png" alt="" />
-                    <div className="name">Name 4</div>
+                  <img src={hiyasImage} alt=""/>
+                    <div className="name">Sonny Boy Hiyas</div>
                   </div>
                   <div className="content">
-                    <div className="role">Role 4</div>
+                    <div className="role">Data Collection</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                     magni distinctio quae.
                   </div>
@@ -288,17 +293,26 @@ const AboutUs = () => {
                   </div>
                   <div className="pattern"></div>
                 </div>
-                <img src="./bg.png" alt="" id="picture" />
+                <img src={hiyasImage} alt="" id="picture" />
                 <div className="details">
-                  Name 4
-                  <span>Role 4</span>
+                Sonny Boy Hiyas
+                  <span>Data Collection</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+                    {/* Faqs Section */}
+                    <div className='faqss' >
+        <Faqs />
+      </div>    
+            {/* Footer Section */}
+            <footer>
+        <Footer />
+      </footer>
       </div>
+ 
+
     </>
   );
 };
