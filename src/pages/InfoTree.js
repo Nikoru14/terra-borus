@@ -77,11 +77,7 @@ const InfoTree = () => {
     ));
   };
 
-  const bgStyle = {
-    backgroundImage: `url(${thumbnails[activeSlideIndex]})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  };
+  const activeThumbnail = thumbnails[activeSlideIndex];
 
   if (!treeInfo) {
     return <Container>Loading...</Container>;
@@ -89,32 +85,36 @@ const InfoTree = () => {
 
   return (
     <>
-      <div className='slider-bg' style={bgStyle} />
+      <div className='infotreepage'>
       <Container>
-        <Row className="justify-content-md-center">
-          <Col md={9}>
-            <div className="slider">
-              <div className="slider-content">
-                <div className="container">
-                  <h2 style={{ marginTop: "50px" }}><strong>Tree: </strong>{treeInfo.name}</h2>
-                  <div className="content2">
-                    <h2>{`Slider ${activeSlideIndex + 1}`}</h2>
-                    <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
-                    <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
-                  </div>
-                </div>
-                <div className="arrows" style={{ position: 'absolute', top: '120px', right: '10px' }}>
-                  <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
-                  <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
-                </div>
-                <div className="thumbnail-container">
-              {renderThumbnails()}
+      <h2 style={{ marginLeft: "20px", marginTop: "20px", fontSize: "50px" }}><strong>Tree: </strong>{treeInfo.name}</h2>
+  <Row>
+    <Col md={7} sm={12} style={{justifyContent: 'center', alignItems: 'center', margin: '2%'}}>
+            
+            <div className="content2" style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <h2 style={{ fontSize: "100px" }}>{`Slider ${activeSlideIndex + 1}`}</h2>
+              <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
+              <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
             </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
-      </Container>
+        <div className="arrows" style={{ position: 'absolute', top: '120px', right: '0' }}>
+          <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
+          <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
+        </div>
+    </Col>
+    <Col md={4} sm={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div className='slider-bg'><img src={activeThumbnail} alt="Slide" style={{ width: '100%', height: '530px', objectFit: 'cover', maxHeight: '70vh', borderRadius:'5%'}} /></div>
+    </Col>
+  </Row>
+  <Row>
+    <Col>
+      <div className="thumbnail-container">
+        {renderThumbnails()}
+      </div>
+    </Col>
+  </Row>
+</Container>
+</div>
+
     </>
   );
 };

@@ -97,10 +97,6 @@ canvas {
   font-size: 30px;
 }
 
-img {
-    border-radius: 50%;
-  }
-
   #particles-js {
     background: black;
     height: 100vh;
