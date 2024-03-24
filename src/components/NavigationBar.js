@@ -1,11 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Dropdown } from 'react-bootstrap'; // Assuming you have Dropdown from react-bootstrap
+import supabase from '../supabase'; // Import your Supabase client
+import { useAuth } from '../AuthContext'; // Import the useAuth hook from your AuthContext
 import '../styles/navbar.css';
 import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
     const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
     const [visible, setVisible] = useState(true);
+    const { user, signOut } = useAuth();
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        const fetchUsername = async () => {
+            if (user) {
+                const { data, error } = await supabase
+                    .from('accounts')
+                    .select('username')
+                    .eq('email', user.email)
+                    .single();
+
+                if (error) {
+                    console.error('Error fetching username:', error.message);
+                } else if (data) {
+                    setUsername(data.username);
+                }
+            }
+        };
+
+        fetchUsername();
+    }, [user]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -36,8 +60,21 @@ const NavigationBar = () => {
                     <Nav.Link className="nav_link_custom" href="/blog">Blog</Nav.Link>
                     <Nav.Link className="nav_link_custom" href="/AboutUs">About</Nav.Link>
                     <Nav.Link className="nav_link_custom" href="/ContactForm">Contact</Nav.Link>
-                    <Nav.Link className="button1" href="/AuthPage">Add Tree</Nav.Link>
+                    <Nav.Link className="button1" href="/AddTree">Add Tree</Nav.Link>
                 </Nav>
+                {user && (
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            Accounnt
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.ItemText>
+                                Welcome, {username}
+                            </Dropdown.ItemText>
+                            <Dropdown.Item onClick={signOut}>Logout</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                )}
             </Navbar.Collapse>
         </Navbar>
     );

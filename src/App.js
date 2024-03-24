@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
-import AdminDashboard from './pages/AdminDashboard'
+import AdminDashboard from './pages/AdminDashboard';
 import TreeInfo from './pages/TreeInfo';
 import AuthPage from './pages/AuthPage';
 import ContactForm from './pages/ContactForm';
@@ -16,23 +12,33 @@ import AdminSmspin from './pages/AdminSmspin';
 import InfoTree from './pages/InfoTree';
 import AddTree from './pages/AddTree';
 import AboutUs from './pages/AboutUs';
+import { useAuth } from './AuthContext';
 
 function App() {
+  const { user, signIn, signOut } = useAuth(); // Use the useAuth hook to access user, signIn, and signOut
+  console.log('User:', user); // Log user information
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Admin" element={<AdminDashboard />} />
         <Route path='/TreeInfo' element={<TreeInfo />} />
-        <Route path='/AuthPage' element={<AuthPage />} />
+        <Route path='/AuthPage' element={user ? <Navigate to='/' replace={true} /> : <AuthPage />} />
         <Route path='/ContactForm' element={<ContactForm />} />
         <Route path='/AdminSmspin' element={<AdminSmspin />} />
         <Route path='/InfoTree' element={<InfoTree />} />
-        <Route path='/AddTree' element={<AddTree />} />
+        <Route
+          path='/AddTree'
+          element={
+            user ? <AddTree /> : <Navigate to='/AuthPage' replace={true} />
+          }
+        />
         <Route path='/AboutUs' element={<AboutUs />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
+
   );
 }
 
