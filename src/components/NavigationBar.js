@@ -71,7 +71,7 @@ const NavigationBar = () => {
                             <Dropdown.ItemText>
                                 Welcome, {username}
                             </Dropdown.ItemText>
-                            <Dropdown.Item onClick={signOut}>Logout</Dropdown.Item>
+                            <Dropdown.Item color='red' onClick={signOut}>Logout</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 )}
