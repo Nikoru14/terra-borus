@@ -42,7 +42,7 @@
     top: 20%;
     width: 1140px;
     max-width: 80%;
-    left: 50%;
+    left: 40%;
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
@@ -103,7 +103,6 @@
     width: max-content;
     z-index: 100;
     display: flex;
-    overflow-x: auto;
     gap: 20px;
   }
 
@@ -460,6 +459,7 @@
   }
 
   #about-us-section {
+    margin-top: 75px;
     background: #0f2004;
     width: 100%;
     height: 50%;

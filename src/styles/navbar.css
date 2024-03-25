@@ -102,7 +102,7 @@
 
 .nav-collapse {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     margin-left: 0;
     margin-top: 0;
@@ -125,5 +125,10 @@
 
 .NotFound {
     text-align: center;
+}
+
+#dropdown-basic{
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
