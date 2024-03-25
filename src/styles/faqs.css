@@ -74,3 +74,37 @@ ul li img {
 .question.active {
     font-weight: bold;
 }
+
+
+/* Media query for mobile phones */
+@media only screen and (max-width: 414px) {
+    .containerfaqs {
+      width: 100%; /* Take full width of the screen */
+      padding: 10px; /* Example padding */
+    }
+  
+    .wrapper_2 {
+      max-width: 100%; /* Take full width of the container */
+    }
+  
+    h1 {
+      font-size: 24px; /* Example font size for heading */
+      margin-bottom: 20px; /* Example margin */
+    }
+  
+    .question {
+      cursor: pointer; /* Make it clear it's clickable */
+      padding: 10px; /* Example padding */
+      border-bottom: 1px solid #ccc; /* Example border */
+    }
+  
+    .reply {
+      display: none; /* Hide replies by default */
+      padding: 10px; /* Example padding */
+    }
+  
+    .question.active + .reply {
+      display: block; /* Show reply when question is active */
+    }
+  }
+  
