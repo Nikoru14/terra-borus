@@ -21,7 +21,7 @@
 }
 
 .treelist{
-  padding-top: 190px;
+  padding-top: 250px;
   margin-left: auto;
   margin-right: auto;
   width: 95%;
@@ -52,7 +52,8 @@
   position: relative;
 }
 
-canvas {
+
+#test {
     position: fixed;
     left: 0;
     top: 0;
@@ -60,8 +61,8 @@ canvas {
     height: 100%;
     overflow: hidden;
     background-size: cover;
-    z-index: -1;
     background-repeat: no-repeat;
+    z-index: -1;
 }
 
 
