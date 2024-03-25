@@ -65,9 +65,9 @@ const NavigationBar = () => {
                 {user && (
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            Accounnt
+                            Account
                         </Dropdown.Toggle>
-                        <Dropdown.Menu>
+                        <Dropdown.Menu className="dropdown-menu-right">
                             <Dropdown.ItemText>
                                 Welcome, {username}
                             </Dropdown.ItemText>
