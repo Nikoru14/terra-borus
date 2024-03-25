@@ -76,35 +76,34 @@ ul li img {
 }
 
 
-/* Media query for mobile phones */
 @media only screen and (max-width: 414px) {
     .containerfaqs {
-      width: 100%; /* Take full width of the screen */
-      padding: 10px; /* Example padding */
+      width: 100%;
+      padding: 10px;
     }
   
     .wrapper_2 {
-      max-width: 100%; /* Take full width of the container */
+      max-width: 100%;
     }
   
     h1 {
-      font-size: 24px; /* Example font size for heading */
-      margin-bottom: 20px; /* Example margin */
+      font-size: 24px;
+      margin-bottom: 20px;
     }
   
     .question {
-      cursor: pointer; /* Make it clear it's clickable */
-      padding: 10px; /* Example padding */
-      border-bottom: 1px solid #ccc; /* Example border */
+      cursor: pointer;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
     }
   
     .reply {
-      display: none; /* Hide replies by default */
-      padding: 10px; /* Example padding */
+      display: none;
+      padding: 10px;
     }
   
     .question.active + .reply {
-      display: block; /* Show reply when question is active */
+      display: block;
     }
   }
   
