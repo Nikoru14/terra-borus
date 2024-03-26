@@ -59,7 +59,6 @@ const Map = () => {
 
     return (
         <>
-            <MapNavBar />
             <br></br>
             <ReactMapGL
                 {...viewport}
@@ -105,43 +104,5 @@ const Map = () => {
     );
 };
 
-const MapNavBar = () => {
-
-    return (
-        <>
-        <div className="nav" expand="lg">
-            <Navbar.Brand href="/"><div className='overview12'>Map Overview</div></Navbar.Brand>
-            <Nav className="nav_bar1 d-flex justify-content-end">
-                <NavDropdown title="Trees Species" id="species-dropdown" className="species">
-                    <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">2</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Trees List" id="list-dropdown" className="list">
-                    <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">2</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Trees Status" id="status-dropdown" className="status">
-                    <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">2</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
-                </NavDropdown>
-
-                <NavDropdown title="Trees Cycle" id="cycle-dropdown" className="cycle">
-                    <NavDropdown.Item href="/" className="nav-link-custom11">1</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">2</NavDropdown.Item>
-                    <NavDropdown.Item href="/" className="nav-link-custom11">3</NavDropdown.Item>
-                </NavDropdown>
-            </Nav>
-
-        </div>
-
-
-    </> 
-    );
-}
 
 export default Map;
