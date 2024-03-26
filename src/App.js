@@ -13,6 +13,7 @@ import InfoTree from './pages/InfoTree';
 import AddTree from './pages/AddTree';
 import AboutUs from './pages/AboutUs';
 import Adminside from './adminside/adminside';
+import TreeForm from './adminside/TreeForm';
 import { useAuth } from './AuthContext';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         />
         <Route path='/AboutUs' element={<AboutUs />} />
         <Route path='/Adminside' element={<Adminside />} />
+        <Route path='/TreeForm' element={<TreeForm />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
