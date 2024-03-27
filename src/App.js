@@ -11,8 +11,11 @@ import AdminSmspin from './pages/AdminSmspin';
 import InfoTree from './pages/InfoTree';
 import AddTree from './pages/AddTree';
 import AboutUs from './pages/AboutUs';
-import Adminside from './adminside/adminside';
+import Sidebar from './adminside/Sidebar';
 import TreeForm from './adminside/TreeForm';
+import Home from './adminside/Home';
+import Tree from './adminside/Tree';
+import AdminMap from './adminside/AdminMap';
 import { useAuth } from './AuthContext';
 
 function App() {
@@ -35,8 +38,11 @@ function App() {
           }
         />
         <Route path='/AboutUs' element={<AboutUs />} />
-        <Route path='/Adminside' element={<Adminside />} />
+        <Route path='/Sidebar' element={<Sidebar />} />
         <Route path='/TreeForm' element={<TreeForm />} />
+        <Route path='/Home' element={<Home />} />
+        <Route path='/Tree' element={<Tree />} />
+        <Route path='/AdminMap' element={<AdminMap />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>

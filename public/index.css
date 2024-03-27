@@ -20,6 +20,17 @@
     position: relative;
 }
 
+.mapContainerAdminMap {
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 650px;
+  pointer-events: auto;
+  border-radius: 30px;
+  position: relative;
+}
+
 .treelist{
   padding-top: 250px;
   margin-left: auto;

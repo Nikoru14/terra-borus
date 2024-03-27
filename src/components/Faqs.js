@@ -12,7 +12,7 @@ const Faqs = () => {
     <main className="containerfaqs">
       <div className="wrapper_2">
         <h1>FAQ's</h1>
-        <ul>
+        <ul id='ulfaqs'>
           {faqData.map((item, index) => (
             <li className="heading1" key={index}>
               <div className={`question ${activeIndex === index ? 'active' : ''}`} onClick={() => toggleAccordion(index)}>

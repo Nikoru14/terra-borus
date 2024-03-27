@@ -9,8 +9,8 @@
 }
 
 
-ul {
-    width: 80%;
+#ulfaqs {
+    width: 90%;
     list-style: none;
 }
 
@@ -45,7 +45,7 @@ ul {
     border-bottom: 1px solid var(--Light-grayish-blue);
     margin-bottom: 15px;
 }
-ul .heading1 .question{
+#ulfaqs .heading1 .question{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,7 +53,7 @@ ul .heading1 .question{
     margin-bottom: 15px;
 }
 
-ul .heading1 img {
+#ulfaqs .heading1 img {
     width: 10px;
     height: 8px;
 }

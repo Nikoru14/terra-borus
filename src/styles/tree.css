@@ -18,6 +18,21 @@
   margin: 0 50px;
 }
 
+.overview13 {
+  font-size: xx-large;
+  color: lightgreen;
+  position: relative;
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 3px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  white-space: nowrap;
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+  margin: 0 50px;
+}
+
 @keyframes typewriter {
   from {
     width: 0;
@@ -178,4 +193,139 @@ p {
   margin: 10px;
   max-height: 210px;
   border-radius: 20px;
+}
+
+
+/*tree.js*/
+.tree-section{
+  position: sticky;
+    background: rgba(255, 255, 252, 0.27);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 0 solid rgba(255, 255, 252, 0.27);
+  min-height: 100vh;
+  top:0;
+  left:78px;
+  width: calc(100% - 78px);
+  transition: all .5s ease;
+  z-index: 2;
+}
+
+.sidebar.open ~ .tree-section{
+  left:250px;
+  width: calc(100% - 250px);
+}
+
+.tree-section .text{
+  text-align: center;
+  position: relative;
+  color: lightgreen;
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 3px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  white-space: nowrap;
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+  margin: 0 auto;
+  max-width: 125px; 
+  }
+
+  @keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+  }
+  @keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+  }
+
+#addtreelabel {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  display: inherit;
+  width: 150px;
+
+}
+
+.fieldlabels[type="text"],
+.fieldlabels[type="file"] {
+  padding: 8px;
+  border-radius: 0;
+  font-size: 16px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #ccc;
+  width: calc(100% - 50px);
+  color: #ffffff;
+}
+
+.fieldlabels[type="text"]:focus,
+.fieldlabels[type="file"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.fieldlabels[type="file"] {
+  padding: 6px;
+}
+
+.fieldlabels[type="file"]::file-selector-button {
+  border-radius: 0;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.fieldlabels[type="file"]::file-selector-button:hover {
+  background: none;
+}
+
+.addtreebtn {
+  border: 2px solid green;
+  background-color: lightgreen;
+  border-radius: 5px;
+  position: absolute;
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  --bs-link-color: #000000;
+  padding: 5px;
+  right: 15%;
+}
+
+.submitbtntree {
+  border: 2px solid green;
+  background-color: lightgreen;
+  border-radius: 5px;
+  position: absolute;
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  --bs-link-color: #000000;
+  padding: 5px;
+  left: 10%;
+  right: 10%;
+}
+
+.nav_bartree{
+  position: relative;
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  --bs-link-color: #000000;
+}
+
+.nav_bartree:hover {
+  --bs-link-hover-color: lightgreen;
 }

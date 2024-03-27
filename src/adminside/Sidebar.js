@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import '../styles/adminside.css'; 
+import { Link } from 'react-router-dom';
 import Map from '../components/Map';
+import Tree from './Tree';
 
 function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState(null);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleItemClick = (item) => {
+    setActiveItem(item);
   };
 
   return (
@@ -17,25 +24,25 @@ function Sidebar() {
         <i className="bx bx-menu" id="btn" onClick={toggleSidebar}></i>
       </div>
       <ul className="nav-list">
-      <li id='sidebarli'>
-        <i className="bx bx-search"></i>
-        <input type="text" placeholder="Search..."/>
-         <span className="tooltip">Search</span>
-      </li>
-      <li id='sidebarli'>
-        <a href="#">
-          <i className="bx bx-grid-alt"></i>
-          <span className="link_name">Home</span>
-        </a>
-        <span className="tooltip">Home</span>
-      </li>
-      <li id='sidebarli'>
-        <a href="#">
+        <li id='sidebarli'>
+          <i className="bx bx-search"></i>
+          <input type="text" placeholder="Search..."/>
+          <span className="tooltip">Search</span>
+        </li>
+        <li id='sidebarli'>
+          <Link to="/home" onClick={() => handleItemClick('home')}>
+            <i className={`bx bx-grid-alt ${activeItem === 'home' ? 'active' : ''}`}></i>
+            <span className={`link_name ${activeItem === 'home' ? 'active' : ''}`}>Home</span>
+          </Link>
+          <span className="tooltip">Home</span>
+        </li>
+        <li id='sidebarli'>
+          <Link to="/tree"> {/* Use Link instead of anchor tag */}
             <i className='bx bxs-tree'></i>
             <span className="link_name">Tree</span>
-        </a>
-        <span className="tooltip">Tree</span>
-      </li>
+          </Link>
+          <span className="tooltip">Tree</span>
+        </li>
       <li id='sidebarli'>
         <a href="#">
             <i className='bx bxs-objects-vertical-bottom' ></i>
@@ -44,10 +51,10 @@ function Sidebar() {
         <span className="tooltip">Status</span>
       </li>
       <li id='sidebarli'>
-        <a href="#">
+        <Link to="/adminmap">
             <i className='bx bx-map-alt' ></i>
           <span className="link_name">Map</span>
-        </a>
+          </Link>
         <span className="tooltip">Map</span>
       </li>
       <li id='sidebarli'>
@@ -88,19 +95,5 @@ function Sidebar() {
   );
 }
 
-function Adminside() {
-  return (
-    <div className="App">
-      <Sidebar />
-      <section className="home-section">
-        <div className="text">Dashboard</div>
-              {/* Map Section */}
-              <div className='mapContainer'>
-          <Map />
-        </div>
-      </section>
-    </div>
-  );
-}
 
-export default Adminside;
+export default Sidebar;
