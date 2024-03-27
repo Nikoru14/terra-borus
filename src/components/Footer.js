@@ -4,48 +4,48 @@ import '../styles/footer.css';
 function Footer() {
     return (
         <footer className="footer-section">
-            <div className="container">
+            <div className="container" id='containerhome'>
                 <div className="footer-cta pt-5 pb-5">
-                <div class="row">
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="cta-text">
-                                <h4>Find us</h4>
-                                <span>CC7X+9CJ, L. de Leon Street, Siniloan, 4019 Laguna</span>
+                    <div class="row">
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="cta-text">
+                                    <h4>Find us</h4>
+                                    <span>CC7X+9CJ, L. de Leon Street, Siniloan, 4019 Laguna</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="fas fa-phone"></i>
+                                <div class="cta-text">
+                                    <h4>Call us</h4>
+                                    <span>+63-912-214-9381</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 mb-30">
+                            <div class="single-cta">
+                                <i class="far fa-envelope-open"></i>
+                                <div class="cta-text">
+                                    <h4>Mail us</h4>
+                                    <span>terraborus_official@gmail.com</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <i class="fas fa-phone"></i>
-                            <div class="cta-text">
-                                <h4>Call us</h4>
-                                <span>+63-912-214-9381</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-4 mb-30">
-                        <div class="single-cta">
-                            <i class="far fa-envelope-open"></i>
-                            <div class="cta-text">
-                                <h4>Mail us</h4>
-                                <span>terraborus_official@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 </div>
                 <div className="footer-content pt-5 pb-5">
                     <div className="row">
                         <div class="col-xl-4 col-lg-4 mb-50">
                             <div class="footer-widget">
                                 <div class="footer-logo">
-                                    <a href="#"><img src="logo" class="img-fluid" alt="logo"/></a>
+                                    <a href="#"><img src="logo" class="img-fluid" alt="logo" /></a>
                                 </div>
                                 <div class="footer-text">
                                     <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
-                                    elit,Lorem ipsum dolor sit amet.</p>
+                                        elit,Lorem ipsum dolor sit amet.</p>
                                 </div>
                                 <div class="footer-social-icon">
                                     <span>Follow us</span>

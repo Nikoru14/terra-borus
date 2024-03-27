@@ -1,6 +1,6 @@
 .tree-title {
-    font-size: 50px;
-    color: #f0f0f0;
+  font-size: 50px;
+  color: #f0f0f0;
 }
 
 .overview12 {
@@ -22,41 +22,44 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
+
 @keyframes blinkTextCursor {
   from {
     border-right-color: hsl(0, 0%, 80%);
   }
+
   to {
     border-right-color: transparent;
   }
 }
 
-.container {
+#containerhome {
   min-width: 100%;
   width: 100%;
 }
 
 h2 {
   font-family: "Satisfy", cursive;
-    text-align: justify;
-    color: #f0f0f0;
+  text-align: justify;
+  color: #f0f0f0;
 }
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
-.italic
-{
-    font-family: "Satisfy", cursive;
-    font-size: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.italic {
+  font-family: "Satisfy", cursive;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
 .card2 {
   background: rgba(255, 255, 252, 0.27);
   border-radius: 16px;
@@ -67,15 +70,15 @@ p {
   margin: 5%;
   padding: 5%;
 }
-.card_tree
-{
-    font-family: "Courgette", cursive;
-    font-weight: 400;
-    font-style: normal;
-    color: #2b6024;
+
+.card_tree {
+  font-family: "Courgette", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #2b6024;
 }
-.button_view
-{
+
+.button_view {
   all: unset;
   width: auto;
   height: 30px;
@@ -90,16 +93,16 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;  
+  white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
 
 .button_view:hover {
-    text-decoration: none;
-    font-weight: bold;
-    color: white;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
 }
 
 .button_view::after,
@@ -149,11 +152,12 @@ p {
 }
 
 .title-head {
-    font-family: "Satisfy", cursive;
-    font-size: 100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  font-family: "Satisfy", cursive;
+  font-size: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
 .content1 {
   background: rgba(138, 154, 91, 0.3);
   border-radius: 16px;
@@ -166,8 +170,8 @@ p {
 }
 
 .image-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .responsive-image {
@@ -175,6 +179,3 @@ p {
   max-height: 210px;
   border-radius: 20px;
 }
-
-
-

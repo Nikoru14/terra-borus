@@ -5,7 +5,6 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 import AdminDashboard from './pages/AdminDashboard';
-import TreeInfo from './pages/TreeInfo';
 import AuthPage from './pages/AuthPage';
 import ContactForm from './pages/ContactForm';
 import AdminSmspin from './pages/AdminSmspin';
@@ -25,7 +24,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/Admin" element={<AdminDashboard />} />
-        <Route path='/TreeInfo' element={<TreeInfo />} />
         <Route path='/AuthPage' element={user ? <Navigate to='/' replace={true} /> : <AuthPage />} />
         <Route path='/ContactForm' element={<ContactForm />} />
         <Route path='/AdminSmspin' element={<AdminSmspin />} />

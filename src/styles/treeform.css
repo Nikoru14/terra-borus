@@ -1,9 +1,9 @@
-#paragraphh{
+#paragraphh {
     color: grey;
     text-align: center;
 }
 
-#heading{
+#heading {
     text-transform: uppercase;
     color: #0e6812;
     font-weight: normal;
@@ -11,13 +11,13 @@
     text-align: center;
 }
 
-#msform{
+#msform {
     text-align: center;
     position: relative;
     margin-top: 20px;
 }
 
-#msform fieldset{
+#msform fieldset {
     background: white;
     border: 0 none;
     border-radius: 0.5rem;
@@ -28,15 +28,16 @@
     position: relative;
 }
 
-.form-card{
-    text-align: center;
+.form-card {
+    text-align: left;
 }
 
-#msform fieldset:not(:first-of-type){
+#msform fieldset:not(:first-of-type) {
     display: none;
 }
 
-#msform input, #msform textarea{
+#msform input,
+#msform textarea {
     padding: 8px 15px 8px 15px;
     border: 1px solid #ccc;
     border-radius: 0px;
@@ -51,7 +52,8 @@
     letter-spacing: 1px;
 }
 
-#msform input:focus, #msform textarea:focus{
+#msform input:focus,
+#msform textarea:focus {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -59,7 +61,7 @@
     outline-width: 0;
 }
 
-#msform .action-button{
+#msform .action-button {
     width: 100px;
     background: #0e6812;
     font-weight: bold;
@@ -71,6 +73,7 @@
     margin: 10px 0px 10px 5px;
     float: right;
 }
+
 #msform .action-button:hover,
 #msform .action-button:focus {
     background-color: #1f8312
@@ -210,4 +213,3 @@
     width: 100%;
     object-fit: cover
 }
-
