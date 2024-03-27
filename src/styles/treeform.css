@@ -129,6 +129,7 @@
 }
 
 #progressbar {
+    width: 80%;
     margin-bottom: 30px;
     overflow: hidden;
     color: grey;
