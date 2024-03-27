@@ -1,7 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/footer.css';
+import { Link } from 'react-router-dom';
+
+
 
 function Footer() {
+        const [activeItem, setActiveItem] = useState(null);
+
+        const handleItemClick = (item) => {
+            setActiveItem(item);
+          };
+          
     return (
         <footer className="footer-section">
             <div className="container" id='containerhome'>
@@ -80,8 +89,10 @@ function Footer() {
                                 </div>
                                 <div class="subscribe-form">
                                     <form action="#">
-                                        <input type="text" placeholder="Email Address" />
+                                        <input type="text" placeholder="Email Address" />          
+                                        <Link to="/home" onClick={() => handleItemClick('home')}>
                                         <button><i class="fab fa-telegram-plane"></i></button>
+                                        </Link>
                                     </form>
                                 </div>
                             </div>

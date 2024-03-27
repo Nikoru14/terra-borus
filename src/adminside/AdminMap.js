@@ -58,7 +58,7 @@ function AdminMap() {
         </Col>
         <Col xs={12} md={1}>
         </Col>
-    </Row>
+    </Row><br/><br/><br/><br/>
         </section>
       </div>
       </>
