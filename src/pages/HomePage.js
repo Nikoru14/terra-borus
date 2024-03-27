@@ -14,6 +14,7 @@ import Faqs from '../components/Faqs';
 // import Footer from '../components/Footer';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
+
 const HomePage = () => {
   return (
     <>

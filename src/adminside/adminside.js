@@ -18,70 +18,70 @@ function Sidebar() {
       </div>
       <ul className="nav-list">
       <li id='sidebarli'>
-        <i class="bx bx-search"></i>
+        <i className="bx bx-search"></i>
         <input type="text" placeholder="Search..."/>
-         <span class="tooltip">Search</span>
+         <span className="tooltip">Search</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-          <i class="bx bx-grid-alt"></i>
-          <span class="link_name">Home</span>
+          <i className="bx bx-grid-alt"></i>
+          <span className="link_name">Home</span>
         </a>
-        <span class="tooltip">Home</span>
+        <span className="tooltip">Home</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bxs-tree'></i>
-            <span class="link_name">Tree</span>
+            <i className='bx bxs-tree'></i>
+            <span className="link_name">Tree</span>
         </a>
-        <span class="tooltip">Tree</span>
+        <span className="tooltip">Tree</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bxs-objects-vertical-bottom' ></i>
-          <span class="link_name">Status</span>
+            <i className='bx bxs-objects-vertical-bottom' ></i>
+          <span className="link_name">Status</span>
         </a>
-        <span class="tooltip">Status</span>
+        <span className="tooltip">Status</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bx-map-alt' ></i>
-          <span class="link_name">Map</span>
+            <i className='bx bx-map-alt' ></i>
+          <span className="link_name">Map</span>
         </a>
-        <span class="tooltip">Map</span>
+        <span className="tooltip">Map</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bx-user-circle' ></i>
-          <span class="link_name">Users</span>
+            <i className='bx bx-user-circle' ></i>
+          <span className="link_name">Users</span>
         </a>
-        <span class="tooltip">Users</span>
+        <span className="tooltip">Users</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bx-category' ></i>
-          <span class="link_name">Category</span>
+            <i className='bx bx-category' ></i>
+          <span className="link_name">Category</span>
         </a>
-        <span class="tooltip">Category</span>
+        <span className="tooltip">Category</span>
       </li>
       <li id='sidebarli'>
         <a href="#">
-            <i class='bx bxs-report' ></i>
-          <span class="link_name">Reports</span>
+            <i className='bx bxs-report' ></i>
+          <span className="link_name">Reports</span>
         </a>
-        <span class="tooltip">Reports</span>
+        <span className="tooltip">Reports</span>
       </li>
       
       <hr/>
-      <li class="profile1">
-        <div class="profile_details">
+      <li className="profile1">
+        <div className="profile_details">
           <img src="../428887545_1607503026745060_468730919493664302_n (1).jpg" alt="profile image"/>
-          <div class="profile_content">
-            <div class="name">Terraborus</div>
-            <div class="designation">Admin</div>
+          <div className="profile_content">
+            <div className="name">Terraborus</div>
+            <div className="designation">Admin</div>
           </div>
         </div>
-        <i class="bx bx-log-out" id="log_out"></i>
+        <i className="bx bx-log-out" id="log_out"></i>
       </li>
       </ul>
     </div>

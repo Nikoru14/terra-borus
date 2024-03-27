@@ -1,20 +1,14 @@
-*{
-    margin: 0;
-    padding: 0;
-}   
-
-html{
-    height: 100%;
-}
-
-p{
+#paragraphh{
     color: grey;
+    text-align: center;
 }
 
 #heading{
     text-transform: uppercase;
     color: #0e6812;
     font-weight: normal;
+    font-size: xx-large;
+    text-align: center;
 }
 
 #msform{
@@ -134,11 +128,13 @@ p{
 #progressbar {
     margin-bottom: 30px;
     overflow: hidden;
-    color: lightgrey
+    color: grey;
+    z-index: 1;
 }
 
 #progressbar .active {
-    color: #096e09
+    color: #096e09;
+    z-index: 1;
 }
 
 #progressbar li {
@@ -191,7 +187,8 @@ p{
     position: absolute;
     left: 0;
     top: 25px;
-    z-index: -1
+    z-index: -1;
+    color: grey;
 }
 
 #progressbar li.active:before,
@@ -200,11 +197,13 @@ p{
 }
 
 .progress {
-    height: 20px
+    height: 20px;
+    z-index: 1000;
+    width: 80%;
 }
 
 .progress-bar {
-    background-color: #05420a
+    background-color: #05420a;
 }
 
 .fit-image {
