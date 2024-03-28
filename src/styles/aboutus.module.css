@@ -444,7 +444,7 @@
     display: flex;
   }
 
-  .popup-close {
+  .popupClose {
     position: absolute;
     top: 5px;
     right: 10px;
@@ -457,7 +457,7 @@
     }
   }
 
-  .we-are-block {
+  .weAreBlock {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -467,18 +467,18 @@
   }
 
   @media screen and (max-width: 860px) {
-    .we-are-block {
+    .weAreBlock {
       height: 2200px;
     }
   }
 
   @media screen and (max-width: 500px) {
-    .we-are-block {
+    .weAreBlock {
       height: 2300px;
     }
   }
 
-  #about-us-section {
+  #aboutUsSection {
     background: #0f2004;
     width: 100%;
     height: 50%;
@@ -491,13 +491,13 @@
   }
 
   @media screen and (max-width: 860px) {
-    #about-us-section {
+    #aboutUsSection {
       flex-direction: column;
       justify-content: space-between;
     }
   }
 
-  .about-us-image {
+  .aboutUsImage {
     position: absolute;
     top: 0;
     right: 0;
@@ -507,7 +507,7 @@
   }
 
   @media screen and (max-width: 860px) {
-    .about-us-image {
+    .aboutUsImage {
       position: relative;
       width: 100%;
       height: 45%;
@@ -515,19 +515,19 @@
   }
 
   @media screen and (max-width: 747px) {
-    .about-us-image {
+    .aboutUsImage {
       height: 35%;
     }
   }
 
   @media screen and (max-width: 644px) {
-    .about-us-image img {
+    .aboutUsImage img {
       position: absolute;
       left: -220px;
     }
   }
 
-  .about-us-info {
+  .aboutUsInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -540,7 +540,7 @@
   }
 
   @media screen and (max-width: 1353px) {
-    .about-us-info {
+    .aboutUsInfo {
       margin-right: 400px;
       width: 60%;
       background: #95c41599;
@@ -549,26 +549,26 @@
   }
 
   @media screen and (max-width: 1238px) {
-    .about-us-info {
+    .aboutUsInfo {
       margin-right: 340px;
       width: 100%;
     }
   }
 
   @media screen and (max-width: 1111px) {
-    .about-us-info {
+    .aboutUsInfo {
       margin-right: 270px;
     }
   }
 
   @media screen and (max-width: 910px) {
-    .about-us-info {
+    .aboutUsInfo {
       margin-right: 150px;
     }
   }
 
   @media screen and (max-width: 860px) {
-    .about-us-info {
+    .aboutUsInfo {
       margin: 0px 0px 0px 0px !important;
       padding: 0px 20px 0px 20px !important;
       width: 100%;
@@ -578,36 +578,36 @@
   }
 
   @media screen and (max-width: 747px) {
-    .about-us-info {
+    .aboutUsInfo {
       height: 65%;
     }
   }
 
-  .about-us-info h2 {
+  .aboutUsInfo h2 {
     color: white;
     font-size: 40pt;
     text-align: right;
   }
 
   @media screen and (max-width: 860px) {
-    .about-us-info h2 {
+    .aboutUsInfo h2 {
       text-align: center;
     }
   }
 
-  .about-us-info p {
+  .aboutUsInfo p {
     color: white;
     font-size: 14pt;
     text-align: right;
   }
 
   @media screen and (max-width: 860px) {
-    .about-us-info p {
+    .aboutUsInfo p {
       text-align: center;
     }
   }
 
-  .about-us-info a {
+  .aboutUsInfo a {
     background-color: white;
     color: #6b9420;
     width: 180px;
@@ -617,14 +617,14 @@
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   }
 
-  .about-us-info a:hover {
+  .aboutUsInfo a:hover {
     background: #404140;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     transform: translateY(10px);
   }
 
-  #history-section {
+  #historySection {
     background: white;
     width: 100%;
     height: 50%;
@@ -637,13 +637,13 @@
   }
 
   @media screen and (max-width: 860px) {
-    #history-section {
+    #historySection {
       flex-direction: column;
       justify-content: space-between;
     }
   }
 
-  .history-image {
+  .historyImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -653,7 +653,7 @@
   }
 
   @media screen and (max-width: 860px) {
-    .history-image {
+    .historyImage {
       position: relative;
       width: 100%;
       height: 40%;
@@ -661,19 +661,19 @@
   }
 
   @media screen and (max-width: 747px) {
-    .history-image {
+    .historyImage {
       height: 35%;
     }
   }
 
   @media screen and (max-width: 644px) {
-    .history-image img {
+    .historyImage img {
       position: absolute;
       right: -220px;
     }
   }
 
-  .history-info {
+  .historyInfo {
     background: white;
     display: flex;
     flex-direction: column;
@@ -687,7 +687,7 @@
   }
 
   @media screen and (max-width: 1353px) {
-    .history-info {
+    .historyInfo {
       margin-left: 400px;
       width: 60%;
       background-color: lightgray;
@@ -696,26 +696,26 @@
   }
 
   @media screen and (max-width: 1238px) {
-    .history-info {
+    .historyInfo {
       margin-left: 340px;
       width: 100%;
     }
   }
 
   @media screen and (max-width: 1111px) {
-    .history-info {
+    .historyInfo {
       margin-left: 270px;
     }
   }
 
   @media screen and (max-width: 910px) {
-    .history-info {
+    .historyInfo {
       margin-left: 150px;
     }
   }
 
   @media screen and (max-width: 860px) {
-    .history-info {
+    .historyInfo {
       margin: 0px 0px 0px 0px !important;
       padding: 0px 40px 0px 40px !important;
       width: 100%;
@@ -725,31 +725,31 @@
   }
 
   @media screen and (max-width: 747px) {
-    .history-info {
+    .historyInfo {
       height: 65%;
     }
   }
 
-  .history-info h2 {
+  .historyInfo h2 {
     color: #559125;
     font-size: 40pt;
     text-align: left;
   }
 
   @media screen and (max-width: 860px) {
-    .history-info h2 {
+    .historyInfo h2 {
       text-align: center;
     }
   }
 
-  .history-info p {
+  .historyInfo p {
     color: #15610a;
     font-size: 14pt;
     text-align: left;
   }
 
   @media screen and (max-width: 860px) {
-    .history-info p {
+    .historyInfo p {
       text-align: center;
     }
   }
@@ -963,4 +963,17 @@
   .profile:nth-child(odd) {
     --secondary: rgb(192, 216, 54);
     --primary: rgb(20, 116, 41);
+  }
+
+
+  .faqss{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 50%;
+    border-radius: 30px;
+    position: relative;
   }

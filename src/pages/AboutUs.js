@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Button, Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
-import '../styles/aboutus.css';
+import aboutCss from '../styles/aboutus.module.css';
 import rancapImage from '../images/profile/rancap.jpg';
 import bongatImage from '../images/profile/bongat.jpg';
 import bolinasImage from '../images/profile/bolinas.jpg';
@@ -93,20 +93,20 @@ const AboutUs = () => {
       <NavigationBar />
       <Row>
         <Col xs={12} md={7}>
-        <div className="carousel">
-          <div className="list1">
+        <div className={aboutCss.carousel}>
+          <div className={aboutCss.list1}>
             {initialSlides.map((slide, index) => (
-              <div className={`item ${index === activeIndex ? 'active' : ''}`} key={index}>
+              <div className={`${aboutCss.item} ${index === activeIndex ? aboutCss.active : ''}`} key={index}>
                 <img src={slide.img} alt={`Slide ${index + 1}`} />
-                <div className="content">
+                <div className={aboutCss.content}>
                   {slide.author && <div className="author">{slide.author}</div>}
-                  <div className="title">{slide.title}</div>
-                  <div className="topic">{slide.topic}</div>
-                  <div className="des">{slide.des}</div>
-                  <div className="buttons">
+                  <div className={aboutCss.title}>{slide.title}</div>
+                  <div className={aboutCss.topic}>{slide.topic}</div>
+                  <div className={aboutCss.des}>{slide.des}</div>
+                  <div className={aboutCss.buttons}>
                     <button className="seeMoreBtn" onClick={() => showPopup(slide.popup)}>SEE MORE</button>
                   </div><br/>
-                  <div className="arrows" id='arrowabout'>
+                  <div className={aboutCss.arrows} id={aboutCss.arrowabout}>
           <Button variant="prev" onClick={() => switchSlides('prev')}>{'<'}</Button>
           <Button variant="next" onClick={() => switchSlides('next')}>{'>'}</Button>
         </div>
@@ -120,62 +120,62 @@ const AboutUs = () => {
         <Col xs={12} md={5}>
             <Row></Row>
             <Row>        
-        <div className="thumbnail" id='thumbnailabout'>
+        <div className={aboutCss.thumbnail} id={aboutCss.thumbnailabout}>
           {initialSlides.map((slide, index) => (
             <div
               key={slide.title}
-              className={`item ${index === activeIndex ? 'active' : ''}`}
+              className={`${aboutCss.item} ${index === activeIndex ? aboutCss.active : ''}`}
               onClick={() => setActiveIndex(index)}
             >
               <img src={slide.img} alt={`Thumbnail ${index + 1}`} />
-              <div className="content">
-                <div className="title">{slide.title}</div>
-                <div id="description">{slide.topic}</div>
+              <div className={aboutCss.content}>
+                <div className={aboutCss.title}>{slide.title}</div>
+                <div id={aboutCss.description}>{slide.topic}</div>
               </div>
             </div>
           ))}
         </div></Row>
         </Col>
         </Row>
-        <div className="time"></div>
+        <div className={aboutCss.time}></div>
 
-      <div id="popupcontent1" className={`popup ${currentPopup === 'popupcontent1' ? 'active' : ''}`}>
-        <span className="popup-close" onClick={closePopup}>&times;</span>
+      <div id={aboutCss.popupcontent1} className={`${aboutCss.popup} ${currentPopup === aboutCss.popupcontent1 ? 'active' : ''}`}>
+        <span className={aboutCss.popupClose} onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
         <p>lalala</p>
       </div>
-      <div id="popupcontent2" className={`popup ${currentPopup === 'popupcontent2' ? 'active' : ''}`}>
-        <span className="popup-close" onClick={closePopup}>&times;</span>
+      <div id={aboutCss.popupcontent2} className={`${aboutCss.popup} ${currentPopup === aboutCss.popupcontent2 ? 'active' : ''}`}>
+        <span className={aboutCss.popupClose} onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
         <p>test2</p>
       </div>
-      <div id="popupcontent3" className={`popup ${currentPopup === 'popupcontent3' ? 'active' : ''}`}>
-        <span className="popup-close" onClick={closePopup}>&times;</span>
+      <div id={aboutCss.popupcontent3} className={`${aboutCss.popup} ${currentPopup === aboutCss.popupcontent3 ? 'active' : ''}`}>
+        <span className={aboutCss.popupClose} onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
         <p>test 3</p>
       </div>
-      <div id="popupcontent4" className={`popup ${currentPopup === 'popupcontent4' ? 'active' : ''}`}>
-        <span className="popup-close" onClick={closePopup}>&times;</span>
+      <div id={aboutCss.popupcontent4} className={`${aboutCss.popup} ${currentPopup === aboutCss.popupcontent4 ? 'active' : ''}`}>
+        <span className={aboutCss.popupClose} onClick={closePopup}>&times;</span>
         <h2>Additional Information 1</h2>
         <p>This is some additional information for the first popup.</p>
         <p>sleep when?</p>
 
       </div>
 
-      <div className="we-are-block">
+      <div className={aboutCss.weAreBlock}>
 
-        <div id="about-us-section">
+        <div id={aboutCss.aboutUsSection}>
 
-          <div className="about-us-image">
+          <div className={aboutCss.aboutUsImage}>
 
             <img src="./bg.png" width="808" height="458" alt="Lobby Image" />
 
           </div>
 
-          <div className="about-us-info">
+          <div className={aboutCss.aboutUsInfo}>
 
             <h2>Indigeneous Fruit Trees</h2>
 
@@ -186,15 +186,15 @@ const AboutUs = () => {
 
         </div>
 
-        <div id="history-section">
+        <div id={aboutCss.historySection}>
 
-          <div className="history-image">
+          <div className={aboutCss.historyImage}>
 
             <img src="./bg.png" width="951" height="471" alt="Building Pic" />
 
           </div>
 
-          <div className="history-info">
+          <div className={aboutCss.historyInfo}>
 
             <h2>Indigeneous Forest Trees</h2>
 
@@ -203,105 +203,105 @@ const AboutUs = () => {
           </div>
 
         </div>
-        <div className="center">
-          <div className="team">
-            <div className="title">Our Team</div>
-            <div className="profiles">
-              <div className="profile">
-                <div className="card">
-                  <div className="head">
+        <div className={aboutCss.center}>
+          <div className={aboutCss.team}>
+            <div className={aboutCss.title}>Our Team</div>
+            <div className={aboutCss.profiles}>
+              <div className={aboutCss.profile}>
+                <div className={aboutCss.card}>
+                  <div className={aboutCss.head}>
                   <img src={rancapImage} alt=""/>
-                    <div className="name">Sharlyn Rancap</div>
+                    <div className={aboutCss.name}>Sharlyn Rancap</div>
                   </div>
-                  <div className="content">
-                    <div className="role">Team Leader</div>
+                  <div className={aboutCss.content}>
+                    <div className={aboutCss.role}>Team Leader</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
                     accusamus fuga.
                   </div>
-                  <div className="icons">
+                  <div className={aboutCss.icons}>
                     <a href=""><i className="fa-brands fa-linkedin"></i></a>
                     <a href=""><i className="fa-brands fa-github"></i></a>
                     <a href=""><i className="fa-solid fa-envelope"></i></a>
                   </div>
                 </div>
 
-                <img src={rancapImage} alt="" id="picture" />
-                <div className="details">
+                <img src={rancapImage} alt="" id={aboutCss.picture} />
+                <div className={aboutCss.details}>
                 Sharlyn Rancap
                   <span>Team Leader</span>
                 </div>
               </div>
 
-              <div className="profile">
-                <div className="card">
-                  <div className="head">
+              <div className={aboutCss.profile}>
+                <div className={aboutCss.card}>
+                  <div className={aboutCss.head}>
                   <img src={bongatImage} alt=""/>
-                    <div className="name">Nikko Bongat</div>
+                    <div className={aboutCss.name}>Nikko Bongat</div>
                   </div>
-                  <div className="content">
-                    <div className="role">Programmer</div>
+                  <div className={aboutCss.content}>
+                    <div className={aboutCss.role}>Programmer</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Consectetur, harum recusandae!
                   </div>
-                  <div className="icons">
+                  <div className={aboutCss.icons}>
                     <a href=""><i className="fa-brands fa-linkedin"></i></a>
                     <a href=""><i className="fa-brands fa-github"></i></a>
                     <a href=""><i className="fa-solid fa-envelope"></i></a>
                   </div>
-                  <div className="pattern"></div>
+                  <div className={aboutCss.pattern}></div>
                 </div>
-                <img src={bongatImage} alt="" id="picture" />
-                <div className="details">
+                <img src={bongatImage} alt="" id={aboutCss.picture} />
+                <div className={aboutCss.details}>
                 Nikko Bongat
                   <span>Programmer</span>
                 </div>
               </div>
 
-              <div className="profile">
-                <div className="card">
-                  <div className="head">
+              <div className={aboutCss.profile}>
+                <div className={aboutCss.card}>
+                  <div className={aboutCss.head}>
                   <img src={bolinasImage} alt=""/>
-                    <div className="name">Symon Christopher Bolinas</div>
+                    <div className={aboutCss.name}>Symon Christopher Bolinas</div>
                   </div>
-                  <div className="content">
-                    <div className="role">Graphics</div>
+                  <div className={aboutCss.content}>
+                    <div className={aboutCss.role}>Graphics</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                     magni distinctio quae.
                   </div>
-                  <div className="icons">
+                  <div className={aboutCss.icons}>
                     <a href=""><i className="fa-brands fa-linkedin"></i></a>
                     <a href=""><i className="fa-brands fa-github"></i></a>
                     <a href=""><i className="fa-solid fa-envelope"></i></a>
                   </div>
-                  <div className="pattern"></div>
+                  <div className={aboutCss.pattern}></div>
                 </div>
                 <img src={bolinasImage} alt="" id="picture" />
-                <div className="details">
+                <div className={aboutCss.details}>
                   Symon Christopher Bolinas
                   <span>Graphics</span>
                 </div>
               </div>
 
-              <div className="profile">
-                <div className="card">
-                  <div className="head">
+              <div className={aboutCss.profile}>
+                <div className={aboutCss.card}>
+                  <div className={aboutCss.head}>
                   <img src={hiyasImage} alt=""/>
-                    <div className="name">Sonny Boy Hiyas</div>
+                    <div className={aboutCss.name}>Sonny Boy Hiyas</div>
                   </div>
-                  <div className="content">
-                    <div className="role">Data Collection</div>
+                  <div className={aboutCss.content}>
+                    <div className={aboutCss.role}>Data Collection</div>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
                     magni distinctio quae.
                   </div>
-                  <div className="icons">
+                  <div className={aboutCss.icons}>
                     <a href=""><i className="fa-brands fa-linkedin"></i></a>
                     <a href=""><i className="fa-brands fa-github"></i></a>
                     <a href=""><i className="fa-solid fa-envelope"></i></a>
                   </div>
-                  <div className="pattern"></div>
+                  <div className={aboutCss.pattern}></div>
                 </div>
-                <img src={hiyasImage} alt="" id="picture" />
-                <div className="details">
+                <img src={hiyasImage} alt="" id={aboutCss.picture} />
+                <div className={aboutCss.details}>
                 Sonny Boy Hiyas
                   <span>Data Collection</span>
                 </div>
@@ -310,9 +310,9 @@ const AboutUs = () => {
           </div>
         </div>
                     {/* Faqs Section */}
-                    <div className='faqss' >
-        <Faqs />
-      </div>    
+            <div className={aboutCss.faqss}>
+              <Faqs />
+            </div>    
             {/* Footer Section */}
             <footer>
         <Footer />

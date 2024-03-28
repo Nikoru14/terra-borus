@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import treeData from '../json/TreeData.json';
 import { useSearchParams } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import '../styles/infotree.css';
+import infoTreecss from '../styles/infotree.module.css';
 
 const InfoTree = () => {
   const [searchParams] = useSearchParams();
@@ -66,12 +66,12 @@ const InfoTree = () => {
 
   const renderThumbnails = () => {
     return thumbnails.map((thumbnail, index) => (
-      <div key={index} className="thumbnail-item" onClick={() => setActiveSlideIndex(index)}>
-        <div className="thumbnail-title">{slides[index] && slides[index].title}</div>
+      <div key={index} className={infoTreecss.thumbnailItem} onClick={() => setActiveSlideIndex(index)}>
+        <div className={infoTreecss.thumbnailTitle}>{slides[index] && slides[index].title}</div>
         <img
           src={thumbnail}
           alt={`Slide ${index}`}
-          className={`thumbnail-image ${index === activeSlideIndex ? 'active' : ''}`}
+          className={`${infoTreecss.thumbnailImage} ${index === activeSlideIndex ? infoTreecss.active : ''}`}
         />
       </div>
     ));
@@ -85,29 +85,29 @@ const InfoTree = () => {
 
   return (
     <>
-      <div className='infotreepage'>
+      <div className={infoTreecss.infotreepage}>
         <Container>
           <h2 style={{ marginLeft: "20px", marginTop: "20px", fontSize: "50px" }}><strong>Tree: </strong>{treeInfo.name}</h2>
           <Row>
             <Col md={7} sm={12} style={{ justifyContent: 'center', alignItems: 'center', margin: '2%' }}>
 
-              <div className="content2" style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <div className={infoTreecss.content2} style={{ justifyContent: 'center', alignItems: 'center' }}>
                 <h2 style={{ fontSize: "100px" }}>{`Slider ${activeSlideIndex + 1}`}</h2>
                 <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
-                <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
+                <p className={infoTreecss.paradescrip}>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
               </div>
-              <div className="arrows" id='arrowinfo' style={{ position: 'absolute', top: '120px', right: '0' }}>
+              <div className={infoTreecss.arrows} id={infoTreecss.arrowinfo} style={{ position: 'absolute', top: '120px', right: '0' }}>
                 <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
                 <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
               </div>
             </Col>
             <Col md={4} sm={12} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div className='slider-bg'><img src={activeThumbnail} alt="Slide" style={{ width: '100%', height: '530px', objectFit: 'cover', maxHeight: '70vh', borderRadius: '5%' }} /></div>
+              <div className={infoTreecss.sliderBg}><img src={activeThumbnail} alt="Slide" style={{ width: '100%', height: '530px', objectFit: 'cover', maxHeight: '70vh', borderRadius: '5%' }} /></div>
             </Col>
           </Row>
           <Row>
             <Col>
-              <div className="thumbnail-container">
+              <div className={infoTreecss.thumbnailContainer}>
                 {renderThumbnails()}
               </div>
             </Col>
