@@ -96,7 +96,7 @@ const InfoTree = () => {
                 <h2>{slides[activeSlideIndex] && slides[activeSlideIndex].title}</h2>
                 <p className='paradescrip'>{slides[activeSlideIndex] && slides[activeSlideIndex].content1}</p>
               </div>
-              <div className="arrows" style={{ position: 'absolute', top: '120px', right: '0' }}>
+              <div className="arrows" id='arrowinfo' style={{ position: 'absolute', top: '120px', right: '0' }}>
                 <Button variant="secondary" onClick={handlePrev}>{'<'}</Button>
                 <Button variant="secondary" onClick={handleNext}>{'>'}</Button>
               </div>

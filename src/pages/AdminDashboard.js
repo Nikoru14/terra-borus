@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import QRCode from 'react-qr-code';
 import treeData from '../json/TreeData.json'; // Adjust the import path as needed
+import { Container } from 'react-bootstrap';
 
 const AdminDashboard = () => {
     const dataArray = Object.entries(treeData).map(([id, details]) => ({
@@ -48,11 +49,11 @@ const AdminDashboard = () => {
     };
 
     return (
-        <>  
+        <>  <Container>
             <div className="container" ><br/><br/><br/>
             <h2 className='overview13'>Tree Data</h2>
                 <div className="row justify-content-start">
-                    <div className="col" id='qrtable' style={{ margin: '20px' }}>
+                    <div className="col" id='qrtable'>
                     <table className="table table-striped table-hover" border="1" style={{ width: '100%', textAlign: 'justify' }}>
                     <thead className="headtable" id='headtable'>
                         <tr>
@@ -92,6 +93,7 @@ const AdminDashboard = () => {
                     </div>
                 </div>
             </div>
+            </Container>
         </>
     );
 };

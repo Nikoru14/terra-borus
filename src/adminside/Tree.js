@@ -90,8 +90,9 @@ function Tree() {
             <Nav.Link  className="submitbtntree" href="#">Submit</Nav.Link>
         </Col>
     </Row>
-</Container>
+</Container><Container>
             <AdminDashboard/>
+            </Container>
             <br/><br/>
         <div className="nav" expand="lg">
             <Navbar.Brand href="/"><div className='overview13'>Map Overview</div></Navbar.Brand>

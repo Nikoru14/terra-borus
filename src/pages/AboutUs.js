@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import {Button, Container, Row, Col, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import NavigationBar from "../components/NavigationBar";
 import '../styles/aboutus.css';
 import rancapImage from '../images/profile/rancap.jpg';
@@ -91,9 +91,10 @@ const AboutUs = () => {
   return (
     <>
       <NavigationBar />
-      <div>
+      <Row>
+        <Col xs={12} md={7}>
         <div className="carousel">
-          <div className="list">
+          <div className="list1">
             {initialSlides.map((slide, index) => (
               <div className={`item ${index === activeIndex ? 'active' : ''}`} key={index}>
                 <img src={slide.img} alt={`Slide ${index + 1}`} />
@@ -104,13 +105,22 @@ const AboutUs = () => {
                   <div className="des">{slide.des}</div>
                   <div className="buttons">
                     <button className="seeMoreBtn" onClick={() => showPopup(slide.popup)}>SEE MORE</button>
-                  </div>
+                  </div><br/>
+                  <div className="arrows" id='arrowabout'>
+          <Button variant="prev" onClick={() => switchSlides('prev')}>{'<'}</Button>
+          <Button variant="next" onClick={() => switchSlides('next')}>{'>'}</Button>
+        </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="thumbnail">
+        </Col>
+        
+        <Col xs={12} md={5}>
+            <Row></Row>
+            <Row>        
+        <div className="thumbnail" id='thumbnailabout'>
           {initialSlides.map((slide, index) => (
             <div
               key={slide.title}
@@ -120,17 +130,14 @@ const AboutUs = () => {
               <img src={slide.img} alt={`Thumbnail ${index + 1}`} />
               <div className="content">
                 <div className="title">{slide.title}</div>
-                <div className="description">{slide.topic}</div>
+                <div id="description">{slide.topic}</div>
               </div>
             </div>
           ))}
-        </div>
-        <div className="arrows">
-          <Button variant="prev" onClick={() => switchSlides('prev')}>{'<'}</Button>
-          <Button variant="next" onClick={() => switchSlides('next')}>{'>'}</Button>
-        </div>
+        </div></Row>
+        </Col>
+        </Row>
         <div className="time"></div>
-      </div>
 
       <div id="popupcontent1" className={`popup ${currentPopup === 'popupcontent1' ? 'active' : ''}`}>
         <span className="popup-close" onClick={closePopup}>&times;</span>
